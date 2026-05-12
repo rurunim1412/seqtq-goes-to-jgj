@@ -3,19 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jogja Trip 2026 – The Fellowship of HiVICT (Hidden Village Of ICT)</title>
+  <title>Jogja Trip 2026 – The Fellowship of HiVICT</title>
 
-  <!-- Bootstrap 5 CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
-  <!-- Google Fonts: Playfair Display + DM Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 
   <style>
-    /* ============================================================
-       CSS CUSTOM PROPERTIES & RESET
-    ============================================================ */
     :root {
       --ocean-deep:   #0a3d62;
       --ocean-mid:    #1a6ea8;
@@ -34,24 +28,17 @@
       --card-radius:  18px;
       --transition:   0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'DM Sans', sans-serif;
       background-color: var(--warm-white);
       color: var(--ink);
       overflow-x: hidden;
     }
+    h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; }
 
-    h1, h2, h3, h4, h5 {
-      font-family: 'Playfair Display', serif;
-    }
-
-    /* ============================================================
-       NAVBAR
-    ============================================================ */
+    /* NAVBAR */
     #mainNav {
       background: rgba(10, 61, 98, 0.92);
       backdrop-filter: blur(14px);
@@ -66,28 +53,22 @@
     }
     .navbar-brand {
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 900;
+      font-size: 1.4rem; font-weight: 900;
       color: var(--accent-warm) !important;
       letter-spacing: -0.5px;
     }
     .navbar-brand span { color: #fff; }
     .nav-link {
       color: rgba(255,255,255,0.82) !important;
-      font-weight: 500;
-      font-size: 0.88rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+      font-weight: 500; font-size: 0.88rem;
+      letter-spacing: 0.5px; text-transform: uppercase;
       padding: 0.5rem 1rem !important;
-      position: relative;
-      transition: color 0.25s;
+      position: relative; transition: color 0.25s;
     }
     .nav-link::after {
-      content: '';
-      position: absolute;
+      content: ''; position: absolute;
       bottom: 0; left: 50%; right: 50%;
-      height: 2px;
-      background: var(--accent-warm);
+      height: 2px; background: var(--accent-warm);
       transition: left 0.3s, right 0.3s;
     }
     .nav-link:hover { color: #fff !important; }
@@ -95,24 +76,16 @@
     .navbar-toggler { border: none; }
     .navbar-toggler-icon { filter: invert(1); }
 
-    /* ============================================================
-       HERO SECTION
-    ============================================================ */
+    /* HERO */
     #home {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 100vh; position: relative;
+      display: flex; align-items: center; justify-content: center;
       overflow: hidden;
     }
-    /* backround landing page */
     .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1622692364441-a536e51ed1fc?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-      background-size: cover;
-      background-position: center;
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1622692364441-a536e51ed1fc?q=80&w=1176&auto=format&fit=crop');
+      background-size: cover; background-position: center;
       transform: scale(1.05);
       animation: heroZoom 18s ease-in-out infinite alternate;
     }
@@ -121,25 +94,12 @@
       to   { transform: scale(1.12); }
     }
     .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(10,61,98,0.82) 0%,
-        rgba(30,77,43,0.60) 55%,
-        rgba(10,61,98,0.72) 100%
-      );
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(10,61,98,0.82) 0%, rgba(30,77,43,0.60) 55%, rgba(10,61,98,0.72) 100%);
     }
-    /* Animated bokeh dots */
-    .hero-particles {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
+    .hero-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
     .particle {
-      position: absolute;
-      border-radius: 50%;
+      position: absolute; border-radius: 50%;
       background: rgba(255,255,255,0.12);
       animation: float linear infinite;
     }
@@ -150,79 +110,49 @@
       100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 2rem;
-      max-width: 820px;
+      position: relative; z-index: 2;
+      text-align: center; padding: 2rem; max-width: 820px;
     }
     .hero-eyebrow {
       display: inline-block;
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.25);
       color: var(--accent-warm);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      padding: 0.4rem 1.2rem;
-      border-radius: 50px;
-      margin-bottom: 1.5rem;
-      backdrop-filter: blur(8px);
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 0.4rem 1.2rem; border-radius: 50px;
+      margin-bottom: 1.5rem; backdrop-filter: blur(8px);
     }
     .hero-title {
-      font-size: clamp(2.2rem, 6vw, 4.2rem);
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.1;
-      margin-bottom: 1rem;
+      font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 900;
+      color: #fff; line-height: 1.1; margin-bottom: 1rem;
       text-shadow: 0 4px 24px rgba(0,0,0,0.35);
     }
-    .hero-title em {
-      font-style: italic;
-      color: var(--accent-warm);
-    }
+    .hero-title em { font-style: italic; color: var(--accent-warm); }
     .hero-subtitle {
       font-size: clamp(0.95rem, 2.5vw, 1.18rem);
-      color: rgba(255,255,255,0.85);
-      font-weight: 300;
-      letter-spacing: 0.3px;
-      margin-bottom: 2.5rem;
+      color: rgba(255,255,255,0.85); font-weight: 300;
+      letter-spacing: 0.3px; margin-bottom: 2.5rem;
     }
     .hero-dates {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
+      display: flex; gap: 1rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 2.5rem;
     }
     .date-badge {
       background: rgba(255,255,255,0.13);
       border: 1px solid rgba(255,255,255,0.22);
-      color: #fff;
-      padding: 0.45rem 1.1rem;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
+      color: #fff; padding: 0.45rem 1.1rem; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 500;
+      display: flex; align-items: center; gap: 0.45rem;
       backdrop-filter: blur(6px);
     }
     .date-badge i { color: var(--accent-warm); }
     .btn-hero {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent-warm) 100%);
-      color: var(--ink);
-      font-weight: 700;
-      font-size: 0.92rem;
-      letter-spacing: 0.5px;
-      padding: 0.85rem 2.2rem;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
+      color: var(--ink); font-weight: 700; font-size: 0.92rem;
+      letter-spacing: 0.5px; padding: 0.85rem 2.2rem;
+      border-radius: 50px; border: none; cursor: pointer;
       text-decoration: none;
       box-shadow: 0 8px 28px rgba(232,160,72,0.45);
       transition: transform 0.25s, box-shadow 0.25s;
@@ -232,20 +162,13 @@
       box-shadow: 0 14px 36px rgba(232,160,72,0.55);
       color: var(--ink);
     }
-    /* Scroll indicator */
     .scroll-hint {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%); z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.4rem;
       color: rgba(255,255,255,0.55);
-      font-size: 0.72rem;
-      letter-spacing: 1.5px;
+      font-size: 0.72rem; letter-spacing: 1.5px;
       text-transform: uppercase;
       animation: bounce 2s ease-in-out infinite;
     }
@@ -255,52 +178,28 @@
       50%       { transform: translateX(-50%) translateY(8px); }
     }
 
-    /* ============================================================
-       SECTION COMMON
-    ============================================================ */
+    /* SECTION COMMON */
     section { padding: 6rem 0; }
     .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--nature-mid);
-      margin-bottom: 0.75rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--nature-mid); margin-bottom: 0.75rem;
     }
     .section-label::before {
-      content: '';
-      display: block;
-      width: 28px; height: 2px;
+      content: ''; display: block; width: 28px; height: 2px;
       background: var(--nature-mid);
     }
     .section-title {
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 900;
-      color: var(--ocean-deep);
-      margin-bottom: 1rem;
-      line-height: 1.15;
+      font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 900;
+      color: var(--ocean-deep); margin-bottom: 1rem; line-height: 1.15;
     }
     .section-title em { color: var(--nature-mid); font-style: italic; }
     .section-desc {
-      font-size: 1.02rem;
-      color: var(--ink-light);
-      font-weight: 300;
-      max-width: 560px;
+      font-size: 1.02rem; color: var(--ink-light);
+      font-weight: 300; max-width: 560px;
     }
-    .wavy-divider {
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-      margin-top: -2px;
-    }
-    .wavy-divider svg { display: block; }
 
-    /* ============================================================
-       TIMELINE SECTION — Dark Mode Travel Dashboard
-    ============================================================ */
+    /* TIMELINE DARK */
     :root {
       --dash-bg:       #090e1a;
       --dash-surface:  #111827;
@@ -315,35 +214,20 @@
       --glow-pink:     #f472b6;
       --glow-purple:   #a78bfa;
     }
-
-    #timeline {
-      background: var(--dash-bg);
-      position: relative;
-      overflow: hidden;
-    }
-    /* Atmospheric grid overlay */
+    #timeline { background: var(--dash-bg); position: relative; overflow: hidden; }
     #timeline::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(72,184,224,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(72,184,224,0.03) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none;
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(72,184,224,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(72,184,224,0.03) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none;
     }
-    /* Radial glow blobs */
     #timeline::after {
-      content: '';
-      position: absolute;
-      top: 10%; left: -10%;
+      content: ''; position: absolute; top: 10%; left: -10%;
       width: 500px; height: 500px;
       background: radial-gradient(circle, rgba(26,110,168,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
     .tl-glow-blob {
-      position: absolute;
-      bottom: 5%; right: -5%;
+      position: absolute; bottom: 5%; right: -5%;
       width: 420px; height: 420px;
       background: radial-gradient(circle, rgba(46,125,79,0.10) 0%, transparent 70%);
       pointer-events: none;
@@ -353,38 +237,25 @@
     #timeline .section-title { color: #e8f4fb; }
     #timeline .section-title em { color: var(--glow-amber); }
     #timeline .section-desc { color: var(--dash-muted); }
-
-    /* Live Progress Banner */
     #liveProgressBanner {
-      display: none; /* shown by JS if within trip dates */
+      display: none;
       background: linear-gradient(90deg, rgba(82,183,136,0.15), rgba(72,184,224,0.10));
-      border: 1px solid rgba(82,183,136,0.35);
-      border-radius: 12px;
-      padding: 0.85rem 1.25rem;
-      margin-bottom: 2rem;
-      font-size: 0.88rem;
-      color: var(--glow-green);
+      border: 1px solid rgba(82,183,136,0.35); border-radius: 12px;
+      padding: 0.85rem 1.25rem; margin-bottom: 2rem;
+      font-size: 0.88rem; color: var(--glow-green);
     }
     #liveProgressBanner .live-dot {
-      display: inline-block;
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--glow-green);
-      margin-right: 0.5rem;
-      animation: pulse-dot 1.4s ease-in-out infinite;
-      vertical-align: middle;
+      display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--glow-green); margin-right: 0.5rem;
+      animation: pulse-dot 1.4s ease-in-out infinite; vertical-align: middle;
     }
     @keyframes pulse-dot {
       0%, 100% { box-shadow: 0 0 0 0 rgba(82,183,136,0.6); }
       50%       { box-shadow: 0 0 0 6px rgba(82,183,136,0); }
     }
-
-    /* Day Accordion Wrappers */
     .day-accordion {
-      border: 1px solid var(--dash-border);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 1.1rem;
+      border: 1px solid var(--dash-border); border-radius: 16px;
+      overflow: hidden; margin-bottom: 1.1rem;
       background: var(--dash-card);
       transition: border-color 0.3s, box-shadow 0.3s;
     }
@@ -392,185 +263,95 @@
       border-color: var(--dash-border-hover);
       box-shadow: 0 0 28px rgba(72,184,224,0.07);
     }
-    /* Accordion button (header) */
     .day-acc-btn {
-      background: transparent;
-      border: none;
-      width: 100%;
-      padding: 1.1rem 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      cursor: pointer;
-      text-align: left;
-      transition: background 0.25s;
+      background: transparent; border: none; width: 100%;
+      padding: 1.1rem 1.4rem; display: flex; align-items: center;
+      gap: 1rem; cursor: pointer; text-align: left; transition: background 0.25s;
     }
     .day-acc-btn:hover { background: rgba(72,184,224,0.05); }
     .day-acc-btn[aria-expanded="true"] { background: rgba(72,184,224,0.07); }
     .day-num-chip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px; height: 40px; min-width: 40px;
-      border-radius: 10px;
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      font-size: 1.1rem;
-      color: var(--dash-bg);
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; min-width: 40px; border-radius: 10px;
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: 1.1rem; color: var(--dash-bg);
     }
     .day-acc-info { flex: 1; }
     .day-acc-name {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #dce9f5;
-      line-height: 1.2;
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: 1.05rem; color: #dce9f5; line-height: 1.2;
     }
-    .day-acc-meta {
-      font-size: 0.72rem;
-      color: var(--dash-muted);
-      margin-top: 0.15rem;
-      letter-spacing: 0.4px;
-    }
-    .day-acc-right {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
+    .day-acc-meta { font-size: 0.72rem; color: var(--dash-muted); margin-top: 0.15rem; letter-spacing: 0.4px; }
+    .day-acc-right { display: flex; align-items: center; gap: 0.6rem; }
     .day-type-badge {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: 50px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.8px;
+      text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 50px;
     }
     .dtb-drive  { background: rgba(72,184,224,0.15);  color: var(--glow-blue);   border: 1px solid rgba(72,184,224,0.25); }
     .dtb-beach  { background: rgba(82,183,136,0.15);  color: var(--glow-green);  border: 1px solid rgba(82,183,136,0.25); }
     .dtb-nature { background: rgba(82,183,136,0.12);  color: #6ee7b7;            border: 1px solid rgba(110,231,183,0.2); }
     .dtb-city   { background: rgba(247,198,122,0.15); color: var(--glow-amber);  border: 1px solid rgba(247,198,122,0.25); }
     .dtb-home   { background: rgba(244,114,182,0.12); color: var(--glow-pink);   border: 1px solid rgba(244,114,182,0.2); }
-    .day-chevron {
-      color: var(--dash-muted);
-      font-size: 1rem;
-      transition: transform 0.3s;
-    }
+    .day-chevron { color: var(--dash-muted); font-size: 1rem; transition: transform 0.3s; }
     .day-acc-btn[aria-expanded="true"] .day-chevron { transform: rotate(180deg); }
-
-    /* Accordion body / activity list */
-    .day-acc-body {
-      border-top: 1px solid var(--dash-border);
-      overflow: hidden;
-    }
-    .activity-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .activity-table thead tr {
-      background: rgba(255,255,255,0.03);
-    }
+    .day-acc-body { border-top: 1px solid var(--dash-border); overflow: hidden; }
+    .activity-table { width: 100%; border-collapse: collapse; }
+    .activity-table thead tr { background: rgba(255,255,255,0.03); }
     .activity-table thead th {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--dash-muted);
-      padding: 0.65rem 1.1rem;
-      border-bottom: 1px solid var(--dash-border);
-      white-space: nowrap;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--dash-muted);
+      padding: 0.65rem 1.1rem; border-bottom: 1px solid var(--dash-border); white-space: nowrap;
     }
     .activity-row {
-      border-bottom: 1px solid rgba(72,184,224,0.06);
-      transition: background 0.2s;
+      border-bottom: 1px solid rgba(72,184,224,0.06); transition: background 0.2s;
     }
     .activity-row:last-child { border-bottom: none; }
     .activity-row:hover { background: rgba(72,184,224,0.04); }
     .activity-row td {
-      padding: 0.75rem 1.1rem;
-      font-size: 0.875rem;
-      color: var(--dash-text);
-      vertical-align: middle;
+      padding: 0.75rem 1.1rem; font-size: 0.875rem;
+      color: var(--dash-text); vertical-align: middle;
     }
-
-    /* LIVE row highlight */
     .activity-row.is-live {
       background: rgba(82,183,136,0.08) !important;
       border-left: 3px solid var(--glow-green);
     }
     .activity-row.is-live td { color: #e0f7ee; }
-
-    /* Time badge */
     .badge-time {
-      background: rgba(72,184,224,0.12);
-      border: 1px solid rgba(72,184,224,0.25);
-      color: var(--glow-blue);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      padding: 0.25rem 0.6rem;
-      border-radius: 6px;
-      white-space: nowrap;
-      font-family: 'DM Sans', monospace;
+      background: rgba(72,184,224,0.12); border: 1px solid rgba(72,184,224,0.25);
+      color: var(--glow-blue); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.5px; padding: 0.25rem 0.6rem; border-radius: 6px;
+      white-space: nowrap; font-family: 'DM Sans', monospace;
     }
-    /* Agenda text */
-    .agenda-text {
-      font-weight: 500;
-      color: #c9d8e8;
-    }
+    .agenda-text { font-weight: 500; color: #c9d8e8; }
     .agenda-text.is-live-text { color: #6ee7b7; font-weight: 600; }
-    /* Route chip */
     .route-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.72rem;
-      color: var(--dash-muted);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 6px;
-      padding: 0.2rem 0.55rem;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.72rem; color: var(--dash-muted);
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 6px; padding: 0.2rem 0.55rem; white-space: nowrap;
     }
     .route-chip i { font-size: 0.65rem; }
-    /* Location badge — glowing */
     .badge-loc {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 0.28rem 0.7rem;
-      border-radius: 50px;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.72rem; font-weight: 600; padding: 0.28rem 0.7rem;
+      border-radius: 50px; white-space: nowrap;
     }
-    .loc-jakarta  { background: rgba(167,139,250,0.15); color: var(--glow-purple); border: 1px solid rgba(167,139,250,0.25); box-shadow: 0 0 8px rgba(167,139,250,0.12); }
-    .loc-pemalang { background: rgba(72,184,224,0.12);  color: var(--glow-blue);   border: 1px solid rgba(72,184,224,0.22);  box-shadow: 0 0 8px rgba(72,184,224,0.10); }
-    .loc-gunkid   { background: rgba(82,183,136,0.12);  color: var(--glow-green);  border: 1px solid rgba(82,183,136,0.22);  box-shadow: 0 0 8px rgba(82,183,136,0.10); }
-    .loc-jogja    { background: rgba(247,198,122,0.12); color: var(--glow-amber);  border: 1px solid rgba(247,198,122,0.22); box-shadow: 0 0 8px rgba(247,198,122,0.10); }
-    .loc-travel   { background: rgba(244,114,182,0.10); color: var(--glow-pink);   border: 1px solid rgba(244,114,182,0.18); box-shadow: 0 0 8px rgba(244,114,182,0.08); }
-    .loc-masjid   { background: rgba(167,139,250,0.12); color: #c4b5fd;            border: 1px solid rgba(167,139,250,0.2);  box-shadow: 0 0 6px rgba(167,139,250,0.08); }
-
-    /* Live pulse icon inside row */
+    .loc-jakarta  { background: rgba(167,139,250,0.15); color: var(--glow-purple); border: 1px solid rgba(167,139,250,0.25); }
+    .loc-pemalang { background: rgba(72,184,224,0.12);  color: var(--glow-blue);   border: 1px solid rgba(72,184,224,0.22);  }
+    .loc-gunkid   { background: rgba(82,183,136,0.12);  color: var(--glow-green);  border: 1px solid rgba(82,183,136,0.22);  }
+    .loc-jogja    { background: rgba(247,198,122,0.12); color: var(--glow-amber);  border: 1px solid rgba(247,198,122,0.22); }
+    .loc-travel   { background: rgba(244,114,182,0.10); color: var(--glow-pink);   border: 1px solid rgba(244,114,182,0.18); }
+    .loc-masjid   { background: rgba(167,139,250,0.12); color: #c4b5fd;            border: 1px solid rgba(167,139,250,0.2);  }
     .live-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.65rem;
-      color: var(--glow-green);
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-left: 0.5rem;
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.65rem; color: var(--glow-green); font-weight: 700;
+      letter-spacing: 0.5px; text-transform: uppercase; margin-left: 0.5rem;
     }
     .live-pill::before {
-      content: '';
-      display: inline-block;
-      width: 6px; height: 6px;
-      background: var(--glow-green);
-      border-radius: 50%;
+      content: ''; display: inline-block; width: 6px; height: 6px;
+      background: var(--glow-green); border-radius: 50%;
       animation: pulse-dot 1.2s ease-in-out infinite;
     }
-    /* Responsive: stack on mobile */
     @media (max-width: 575px) {
       .activity-table thead { display: none; }
       .activity-row, .activity-row td { display: block; }
@@ -580,256 +361,488 @@
       .activity-row { border-bottom: 1px solid rgba(72,184,224,0.08); }
     }
 
-    /* ============================================================
-       GALLERY SECTION
-    ============================================================ */
-    #gallery {
-      background: var(--ocean-deep);
-      position: relative;
-      overflow: hidden;
-    }
+    /* GALLERY */
+    #gallery { background: var(--ocean-deep); position: relative; overflow: hidden; }
     #gallery .section-label { color: var(--ocean-light); }
     #gallery .section-label::before { background: var(--ocean-light); }
     #gallery .section-title { color: #fff; }
     #gallery .section-title em { color: var(--accent-warm); }
     #gallery .section-desc { color: rgba(255,255,255,0.6); }
-
-    /* Background texture */
     #gallery::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse at 20% 50%, rgba(26,110,168,0.25) 0%, transparent 60%),
                   radial-gradient(ellipse at 80% 20%, rgba(46,125,79,0.2) 0%, transparent 55%);
       pointer-events: none;
     }
     .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
     .g-item {
-      position: relative;
-      border-radius: var(--card-radius);
-      overflow: hidden;
-      cursor: pointer;
-      aspect-ratio: 4/3;
+      position: relative; border-radius: var(--card-radius);
+      overflow: hidden; cursor: pointer; aspect-ratio: 4/3;
     }
     .g-item:nth-child(1) { grid-column: span 7; }
     .g-item:nth-child(2) { grid-column: span 5; }
     .g-item:nth-child(3) { grid-column: span 4; }
     .g-item:nth-child(4) { grid-column: span 4; }
     .g-item:nth-child(5) { grid-column: span 4; }
-    @media (max-width: 767px) {
-      .g-item { grid-column: span 12 !important; aspect-ratio: 16/9; }
-    }
+    @media (max-width: 767px) { .g-item { grid-column: span 12 !important; aspect-ratio: 16/9; } }
     @media (min-width: 768px) and (max-width: 991px) {
       .g-item:nth-child(1) { grid-column: span 6; }
       .g-item:nth-child(2) { grid-column: span 6; }
       .g-item:nth-child(3), .g-item:nth-child(4), .g-item:nth-child(5) { grid-column: span 4; }
     }
-    .g-item img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-      display: block;
-    }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
     .g-item:hover img { transform: scale(1.07); }
     .g-overlay {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background: linear-gradient(0deg, rgba(10,61,98,0.75) 0%, transparent 55%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.2rem;
-      opacity: 0;
-      transition: opacity 0.35s;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 1.2rem; opacity: 0; transition: opacity 0.35s;
     }
     .g-item:hover .g-overlay { opacity: 1; }
-    .g-label {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fff;
-      font-family: 'Playfair Display', serif;
-    }
+    .g-label { font-size: 0.95rem; font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; }
     .g-sub { font-size: 0.72rem; color: rgba(255,255,255,0.7); font-weight: 400; margin-top: 0.1rem; }
     .g-zoom {
-      position: absolute;
-      top: 1rem; right: 1rem;
-      width: 36px; height: 36px;
-      background: rgba(255,255,255,0.18);
-      border-radius: 50%;
+      position: absolute; top: 1rem; right: 1rem;
+      width: 36px; height: 36px; background: rgba(255,255,255,0.18); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 1rem;
-      opacity: 0; transition: opacity 0.35s;
+      color: #fff; font-size: 1rem; opacity: 0; transition: opacity 0.35s;
       backdrop-filter: blur(4px);
     }
     .g-item:hover .g-zoom { opacity: 1; }
 
-    /* ============================================================
-       LIGHTBOX MODAL
-    ============================================================ */
-    #lightboxModal .modal-content {
-      background: rgba(10, 28, 48, 0.97);
-      border: none;
-      border-radius: 20px;
-    }
-    #lightboxModal .modal-header {
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 1rem 1.5rem;
-    }
+    /* LIGHTBOX */
+    #lightboxModal .modal-content { background: rgba(10, 28, 48, 0.97); border: none; border-radius: 20px; }
+    #lightboxModal .modal-header { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1rem 1.5rem; }
     #lightboxModal .modal-title { color: #fff; font-size: 1rem; }
     #lightboxModal .btn-close { filter: invert(1) opacity(0.7); }
     #lightboxModal .modal-body { padding: 1.5rem; }
-    #lightboxImg {
-      width: 100%;
-      border-radius: 12px;
-      max-height: 65vh;
-      object-fit: contain;
-    }
-    .lb-caption {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.85rem;
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .lb-counter {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.45);
-      text-align: center;
-      margin-top: 0.3rem;
-    }
-    #lightboxModal .modal-footer {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      gap: 0.75rem;
-      justify-content: center;
-    }
+    #lightboxImg { width: 100%; border-radius: 12px; max-height: 65vh; object-fit: contain; }
+    .lb-caption { color: rgba(255,255,255,0.75); font-size: 0.85rem; text-align: center; margin-top: 1rem; }
+    .lb-counter { font-size: 0.78rem; color: rgba(255,255,255,0.45); text-align: center; margin-top: 0.3rem; }
+    #lightboxModal .modal-footer { border-top: 1px solid rgba(255,255,255,0.08); gap: 0.75rem; justify-content: center; }
     .btn-lb {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 50px;
-      padding: 0.5rem 1.4rem;
-      font-size: 0.85rem;
-      transition: background 0.25s;
+      background: rgba(255,255,255,0.1); color: #fff;
+      border: 1px solid rgba(255,255,255,0.18); border-radius: 50px;
+      padding: 0.5rem 1.4rem; font-size: 0.85rem; transition: background 0.25s;
     }
     .btn-lb:hover { background: rgba(255,255,255,0.22); color: #fff; }
 
-    /* ============================================================
-       MAP SECTION
-    ============================================================ */
-    #map {
-      background: linear-gradient(180deg, var(--nature-pale) 0%, var(--warm-white) 100%);
-    }
+    /* MAP */
+    #map { background: linear-gradient(180deg, var(--nature-pale) 0%, var(--warm-white) 100%); }
     .map-frame-wrap {
-      position: relative;
-      border-radius: var(--card-radius);
-      overflow: hidden;
-      box-shadow: 0 16px 56px rgba(10,61,98,0.18);
-      border: 4px solid #fff;
+      position: relative; border-radius: var(--card-radius); overflow: hidden;
+      box-shadow: 0 16px 56px rgba(10,61,98,0.18); border: 4px solid #fff;
     }
-    .map-frame-wrap iframe {
-      width: 100%;
-      height: 460px;
-      border: none;
-      display: block;
-    }
-    .map-pin-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
+    .map-frame-wrap iframe { width: 100%; height: 460px; border: none; display: block; }
+    .map-pin-list { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
     .map-pin {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #fff;
-      border: 1px solid rgba(10,61,98,0.12);
-      border-radius: 50px;
-      padding: 0.4rem 1rem 0.4rem 0.6rem;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--ink);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #fff; border: 1px solid rgba(10,61,98,0.12);
+      border-radius: 50px; padding: 0.4rem 1rem 0.4rem 0.6rem;
+      font-size: 0.82rem; font-weight: 500; color: var(--ink);
       box-shadow: 0 2px 10px rgba(10,61,98,0.06);
     }
     .map-pin i { color: var(--ocean-mid); font-size: 0.95rem; }
 
-    /* ============================================================
-       STATS BAR
-    ============================================================ */
+    /* STATS BAR */
     .stats-bar {
       background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--nature-dark) 100%);
       padding: 3rem 0;
     }
     .stat-item { text-align: center; }
     .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 900;
-      color: var(--accent-warm);
-      line-height: 1;
-      display: block;
+      font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900;
+      color: var(--accent-warm); line-height: 1; display: block;
     }
     .stat-label {
-      font-size: 0.78rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-top: 0.35rem;
-      display: block;
+      font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); margin-top: 0.35rem; display: block;
     }
 
     /* ============================================================
-       FOOTER
+       TRAVEL TOOLS SECTION
     ============================================================ */
-    footer {
-      background: var(--ink);
-      padding: 2rem 0;
-      text-align: center;
+    #tools {
+      background: #0d1117;
+      position: relative; overflow: hidden;
+      padding: 6rem 0;
     }
-    .footer-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 900;
+    #tools::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(247,198,122,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(247,198,122,0.025) 1px, transparent 1px);
+      background-size: 52px 52px; pointer-events: none;
+    }
+    #tools .section-label { color: var(--accent-warm); }
+    #tools .section-label::before { background: var(--accent-warm); }
+    #tools .section-title { color: #f0e6d3; }
+    #tools .section-title em { color: var(--accent-warm); font-style: italic; }
+    #tools .section-desc { color: #6b7a8a; }
+
+    /* Tool Tab Pills */
+    .tool-tabs {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;
+    }
+    .tool-tab {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.5);
+      padding: 0.55rem 1.25rem; border-radius: 50px;
+      font-size: 0.85rem; font-weight: 500; cursor: pointer;
+      transition: all 0.25s; font-family: 'DM Sans', sans-serif;
+    }
+    .tool-tab:hover { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.07); }
+    .tool-tab.active {
+      background: rgba(247,198,122,0.15); border-color: rgba(247,198,122,0.4);
       color: var(--accent-warm);
-      margin-bottom: 0.4rem;
     }
-    .footer-text {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.4);
+    .tool-panel { display: none; }
+    .tool-panel.active { display: block; }
+
+    /* ─ PACKING CHECKLIST ─ */
+    .pack-card {
+      background: #151c2a; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; overflow: hidden;
     }
+    .pack-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.75rem;
+    }
+    .pack-header-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.1rem; color: #dce9f5;
+    }
+    .pack-progress-wrap { display: flex; align-items: center; gap: 0.75rem; }
+    .pack-progress-bar {
+      width: 140px; height: 6px; background: rgba(255,255,255,0.08);
+      border-radius: 4px; overflow: hidden;
+    }
+    .pack-progress-fill {
+      height: 100%; background: linear-gradient(90deg, var(--nature-light), var(--glow-blue));
+      border-radius: 4px; transition: width 0.4s ease;
+    }
+    .pack-progress-text { font-size: 0.78rem; color: var(--dash-muted); }
+    .pack-category { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .pack-category:last-child { border-bottom: none; }
+    .pack-cat-header {
+      padding: 0.85rem 1.5rem;
+      background: rgba(255,255,255,0.025);
+      display: flex; align-items: center; gap: 0.6rem; cursor: pointer;
+    }
+    .pack-cat-icon { font-size: 1rem; }
+    .pack-cat-name {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.4);
+      flex: 1;
+    }
+    .pack-cat-count { font-size: 0.75rem; color: var(--dash-muted); }
+    .pack-items-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0; padding: 0.25rem 0;
+    }
+    .pack-item-row {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.55rem 1.5rem; cursor: pointer;
+      transition: background 0.15s; border-radius: 0;
+    }
+    .pack-item-row:hover { background: rgba(255,255,255,0.03); }
+    .pack-checkbox {
+      width: 18px; height: 18px; min-width: 18px; border-radius: 5px;
+      border: 1.5px solid rgba(255,255,255,0.18); background: transparent;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; cursor: pointer;
+    }
+    .pack-checkbox.checked {
+      background: var(--nature-light); border-color: var(--nature-light);
+    }
+    .pack-checkbox.checked::after {
+      content: '✓'; color: #fff; font-size: 0.7rem; font-weight: 700;
+    }
+    .pack-item-label {
+      font-size: 0.875rem; color: var(--dash-text);
+      transition: color 0.2s, text-decoration 0.2s;
+      user-select: none;
+    }
+    .pack-item-row.checked .pack-item-label {
+      color: var(--dash-muted); text-decoration: line-through;
+    }
+    .pack-add-row {
+      padding: 0.75rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      display: flex; gap: 0.5rem;
+    }
+    .pack-add-input {
+      flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--dash-text); border-radius: 8px; padding: 0.5rem 0.85rem;
+      font-size: 0.85rem; font-family: 'DM Sans', sans-serif; outline: none;
+      transition: border-color 0.2s;
+    }
+    .pack-add-input:focus { border-color: rgba(72,184,224,0.4); }
+    .pack-add-input::placeholder { color: var(--dash-muted); }
+    .pack-add-btn {
+      background: rgba(72,184,224,0.15); border: 1px solid rgba(72,184,224,0.3);
+      color: var(--glow-blue); border-radius: 8px; padding: 0.5rem 1rem;
+      font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s;
+    }
+    .pack-add-btn:hover { background: rgba(72,184,224,0.25); }
+    .pack-reset-btn {
+      background: rgba(244,114,182,0.1); border: 1px solid rgba(244,114,182,0.2);
+      color: var(--glow-pink); border-radius: 8px; padding: 0.5rem 0.85rem;
+      font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s;
+    }
+    .pack-reset-btn:hover { background: rgba(244,114,182,0.2); }
+
+    /* ─ KAS BERSAMA / SPLIT BILL ─ */
+    .kas-card {
+      background: #151c2a; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; overflow: hidden;
+    }
+    .kas-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.75rem;
+    }
+    .kas-total-wrap { text-align: right; }
+    .kas-total-label { font-size: 0.72rem; color: var(--dash-muted); letter-spacing: 1px; text-transform: uppercase; }
+    .kas-total-num {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900;
+      color: var(--accent-warm); line-height: 1.1;
+    }
+    .kas-body { padding: 1.5rem; }
+    .kas-members {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem;
+    }
+    .kas-member-chip {
+      display: flex; align-items: center; gap: 0.4rem;
+      background: rgba(167,139,250,0.12); border: 1px solid rgba(167,139,250,0.2);
+      color: var(--glow-purple); padding: 0.3rem 0.85rem; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 600;
+    }
+    .kas-form {
+      display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.75rem;
+      margin-bottom: 1.25rem; align-items: end;
+    }
+    @media (max-width: 575px) { .kas-form { grid-template-columns: 1fr; } }
+    .kas-form-group label {
+      display: block; font-size: 0.72rem; color: var(--dash-muted);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; font-weight: 600;
+    }
+    .kas-input {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--dash-text); border-radius: 8px; padding: 0.6rem 0.85rem;
+      font-size: 0.88rem; font-family: 'DM Sans', sans-serif; outline: none;
+      transition: border-color 0.2s;
+    }
+    .kas-input:focus { border-color: rgba(247,198,122,0.4); }
+    .kas-input::placeholder { color: var(--dash-muted); }
+    .kas-select {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--dash-text); border-radius: 8px; padding: 0.6rem 0.85rem;
+      font-size: 0.88rem; font-family: 'DM Sans', sans-serif; outline: none;
+      cursor: pointer;
+    }
+    .kas-select option { background: #1a2438; }
+    .kas-add-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+      border: none; color: var(--ink); border-radius: 8px; padding: 0.6rem 1.25rem;
+      font-weight: 700; font-size: 0.85rem; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: opacity 0.2s; white-space: nowrap;
+    }
+    .kas-add-btn:hover { opacity: 0.88; }
+    .kas-list { margin-bottom: 1.5rem; }
+    .kas-list-header {
+      display: grid; grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 0.5rem; padding: 0.5rem 0.75rem;
+      font-size: 0.68rem; color: var(--dash-muted);
+      text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;
+    }
+    .kas-item {
+      display: grid; grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 0.5rem; padding: 0.65rem 0.75rem; border-radius: 8px;
+      transition: background 0.15s; align-items: center;
+    }
+    .kas-item:hover { background: rgba(255,255,255,0.03); }
+    .kas-item-name { font-size: 0.875rem; color: var(--dash-text); font-weight: 500; }
+    .kas-item-who { font-size: 0.78rem; color: var(--dash-muted); }
+    .kas-item-amt {
+      font-size: 0.875rem; color: var(--accent-warm); font-weight: 600;
+      font-family: 'DM Sans', monospace;
+    }
+    .kas-del-btn {
+      background: none; border: none; color: rgba(244,114,182,0.4); cursor: pointer;
+      font-size: 0.9rem; padding: 0.2rem; transition: color 0.2s;
+    }
+    .kas-del-btn:hover { color: var(--glow-pink); }
+    .kas-divider {
+      height: 1px; background: rgba(255,255,255,0.06); margin: 1rem 0;
+    }
+    .kas-summary-title {
+      font-size: 0.72rem; color: var(--dash-muted);
+      text-transform: uppercase; letter-spacing: 2px; font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .kas-summary-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem;
+    }
+    .kas-person-card {
+      background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px; padding: 0.85rem 1rem; text-align: center;
+    }
+    .kas-person-name {
+      font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.55);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;
+    }
+    .kas-person-paid {
+      font-size: 0.72rem; color: var(--dash-muted); margin-bottom: 0.4rem;
+    }
+    .kas-person-balance {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700;
+    }
+    .bal-positive { color: var(--glow-green); }
+    .bal-negative { color: var(--glow-pink); }
+    .bal-zero { color: var(--dash-muted); }
+    .kas-settlement {
+      margin-top: 1rem; padding: 0.85rem 1.1rem;
+      background: rgba(82,183,136,0.07); border: 1px solid rgba(82,183,136,0.18);
+      border-radius: 10px;
+    }
+    .kas-settlement-title {
+      font-size: 0.72rem; color: var(--glow-green); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.6rem;
+    }
+    .kas-settle-row {
+      font-size: 0.85rem; color: var(--dash-text); margin-bottom: 0.3rem;
+    }
+    .kas-settle-row:last-child { margin-bottom: 0; }
+    .kas-settle-arrow { color: var(--accent-warm); margin: 0 0.3rem; }
+    .kas-settle-amt { color: var(--glow-green); font-weight: 600; }
+
+    /* ─ CUACA / WEATHER ─ */
+    .weather-card {
+      background: #151c2a; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; overflow: hidden;
+    }
+    .weather-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .weather-header-title {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: 1.1rem; color: #dce9f5; flex: 1;
+    }
+    .weather-refresh-btn {
+      background: rgba(72,184,224,0.1); border: 1px solid rgba(72,184,224,0.25);
+      color: var(--glow-blue); border-radius: 8px; padding: 0.4rem 0.9rem;
+      font-size: 0.78rem; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s;
+    }
+    .weather-refresh-btn:hover { background: rgba(72,184,224,0.2); }
+    .weather-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1px; background: rgba(255,255,255,0.05);
+    }
+    .weather-city {
+      background: #151c2a; padding: 1.5rem;
+      transition: background 0.2s;
+    }
+    .weather-city:hover { background: rgba(255,255,255,0.025); }
+    .weather-city-name {
+      font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.4);
+      text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;
+    }
+    .weather-icon { font-size: 2.5rem; margin-bottom: 0.5rem; display: block; line-height: 1; }
+    .weather-temp {
+      font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900;
+      color: #dce9f5; line-height: 1; margin-bottom: 0.25rem;
+    }
+    .weather-desc { font-size: 0.82rem; color: var(--dash-muted); margin-bottom: 0.85rem; }
+    .weather-meta { display: flex; flex-direction: column; gap: 0.3rem; }
+    .weather-meta-row {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem; color: var(--dash-muted);
+    }
+    .weather-meta-row i { font-size: 0.8rem; }
+    .weather-tip {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.82rem; color: var(--dash-muted);
+    }
+    .weather-tip strong { color: var(--accent-warm); }
+    .weather-loading {
+      display: flex; align-items: center; justify-content: center;
+      padding: 3rem; color: var(--dash-muted); gap: 0.75rem; font-size: 0.9rem;
+    }
+    .weather-error {
+      padding: 1.5rem; text-align: center; color: var(--glow-pink); font-size: 0.88rem;
+    }
+    .spinner {
+      width: 20px; height: 20px; border: 2px solid rgba(72,184,224,0.2);
+      border-top-color: var(--glow-blue); border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─ COUNTDOWN ─ */
+    .countdown-card {
+      background: #151c2a; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 2rem 1.5rem; text-align: center;
+    }
+    .countdown-label {
+      font-size: 0.72rem; color: var(--dash-muted); text-transform: uppercase;
+      letter-spacing: 2px; font-weight: 700; margin-bottom: 1.5rem;
+    }
+    .countdown-grid {
+      display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .countdown-unit { text-align: center; }
+    .countdown-num {
+      font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900;
+      color: var(--accent-warm); line-height: 1; display: block;
+      background: rgba(247,198,122,0.08); border: 1px solid rgba(247,198,122,0.15);
+      border-radius: 12px; padding: 0.5rem 1rem; min-width: 90px;
+    }
+    .countdown-unit-label {
+      font-size: 0.68rem; color: var(--dash-muted); text-transform: uppercase;
+      letter-spacing: 1.5px; margin-top: 0.5rem; display: block;
+    }
+    .countdown-msg {
+      font-size: 0.95rem; color: #dce9f5; font-weight: 300;
+    }
+    .countdown-msg em { color: var(--accent-warm); font-style: normal; font-weight: 600; }
+
+    /* FOOTER */
+    footer { background: var(--ink); padding: 2rem 0; text-align: center; }
+    .footer-brand {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 900;
+      color: var(--accent-warm); margin-bottom: 0.4rem;
+    }
+    .footer-text { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
     .footer-text a { color: var(--ocean-light); text-decoration: none; }
     .footer-heart { color: #e74c3c; }
-
-    /* ============================================================
-       UTILITIES
-    ============================================================ */
-    .gradient-text {
-      background: linear-gradient(135deg, var(--ocean-mid), var(--nature-mid));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
   </style>
 </head>
 <body>
 
-<!-- ============================================================
-     NAVBAR
-============================================================ -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
   <div class="container">
-    <!-- Brand -->
-    <a class="navbar-brand" href="#home">
-      <i class="bi bi-compass me-1"></i>Jogja <span>Trip 2026</span>
-    </a>
-    <!-- Toggler -->
+    <a class="navbar-brand" href="#home"><i class="bi bi-compass me-1"></i>Jogja <span>Trip 2026</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <!-- Links -->
     <div class="collapse navbar-collapse justify-content-end" id="navMenu">
       <ul class="navbar-nav gap-1 mt-2 mt-lg-0">
         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li>
         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="#map">Map</a></li>
       </ul>
@@ -837,101 +850,57 @@
   </div>
 </nav>
 
-
-<!-- ============================================================
-     HERO SECTION
-============================================================ -->
+<!-- HERO -->
 <section id="home">
-  <!-- Parallax background -->
   <div class="hero-bg" id="heroBg"></div>
-  <!-- Overlay -->
   <div class="hero-overlay"></div>
-  <!-- Floating particles (JS-generated) -->
   <div class="hero-particles" id="particles"></div>
-  <!-- Content -->
   <div class="hero-content">
-    <div class="hero-eyebrow"><i class="bi bi-airplane-fill me-1"></i> The Fellowship of HiVICT (Hidden Village Of ICT) &nbsp;·&nbsp; 2026</div>
+    <div class="hero-eyebrow"><i class="bi bi-airplane-fill me-1"></i> The Fellowship of HiVICT &nbsp;·&nbsp; 2026</div>
     <h1 class="hero-title">Kisah Perjalanan Kami:<br/><em>Jakarta ke Jogja</em></h1>
     <p class="hero-subtitle">5 hari, 4 malam — satu perjalanan yang tidak akan terlupakan<br/>bersama sahabat-sahabat terbaik.</p>
     <div class="hero-dates">
       <div class="date-badge"><i class="bi bi-calendar3"></i> 12 – 16 Mei 2026</div>
       <div class="date-badge"><i class="bi bi-geo-alt-fill"></i> Jakarta → Pemalang → Jogja</div>
-      <div class="date-badge"><i class="bi bi-people-fill"></i> The Fellowship of HiVICT (Hidden Village Of ICT)</div>
+      <div class="date-badge"><i class="bi bi-people-fill"></i> The Fellowship of HiVICT</div>
     </div>
-    <a href="#timeline" class="btn-hero">
-      <i class="bi bi-map-fill"></i> Start Exploring
-    </a>
+    <a href="#timeline" class="btn-hero"><i class="bi bi-map-fill"></i> Start Exploring</a>
   </div>
-  <!-- Scroll hint -->
-  <div class="scroll-hint">
-    <i class="bi bi-chevron-compact-down"></i>
-    <span>Scroll</span>
-  </div>
+  <div class="scroll-hint"><i class="bi bi-chevron-compact-down"></i><span>Scroll</span></div>
 </section>
 
-
-<!-- ============================================================
-     STATS BAR
-============================================================ -->
+<!-- STATS BAR -->
 <div class="stats-bar">
   <div class="container">
     <div class="row g-4 text-center">
-      <div class="col-6 col-md-3">
-        <div class="stat-item">
-          <span class="stat-num">5</span>
-          <span class="stat-label">Hari Perjalanan</span>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-item">
-          <span class="stat-num">6</span>
-          <span class="stat-label">Destinasi</span>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-item">
-          <span class="stat-num">±900</span>
-          <span class="stat-label">Km Total</span>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-item">
-          <span class="stat-num">∞</span>
-          <span class="stat-label">Kenangan</span>
-        </div>
-      </div>
+      <div class="col-6 col-md-3"><div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Hari Perjalanan</span></div></div>
+      <div class="col-6 col-md-3"><div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Destinasi</span></div></div>
+      <div class="col-6 col-md-3"><div class="stat-item"><span class="stat-num">±900</span><span class="stat-label">Km Total</span></div></div>
+      <div class="col-6 col-md-3"><div class="stat-item"><span class="stat-num">∞</span><span class="stat-label">Kenangan</span></div></div>
     </div>
   </div>
 </div>
 
-
-<!-- ============================================================
-     TIMELINE SECTION — Dark Mode Travel Dashboard Accordion
-============================================================ -->
+<!-- TIMELINE -->
 <section id="timeline">
-  <!-- Decorative glow blob -->
   <div class="tl-glow-blob"></div>
-
   <div class="container position-relative">
-    <!-- Section Header -->
     <div class="row mb-5">
       <div class="col-lg-7">
         <div class="section-label"><i class="bi bi-terminal-fill"></i> Itinerary Dashboard</div>
         <h2 class="section-title">Rencana <em>Perjalanan</em></h2>
-        <p class="section-desc">Jadwal lengkap 25 aktivitas — dari keberangkatan malam di Jakarta hingga kepulangan akhir. Setiap momen tercatat.</p>
+        <p class="section-desc">Jadwal lengkap 25 aktivitas — dari keberangkatan malam di Jakarta hingga kepulangan akhir.</p>
       </div>
     </div>
-
-    <!-- Live Progress Banner (shown by JS during trip dates) -->
     <div id="liveProgressBanner">
       <span class="live-dot"></span>
       <strong>LIVE TRIP IN PROGRESS</strong> —
       <span id="liveActivityText">Sedang memuat aktivitas terkini…</span>
     </div>
 
-    <!-- ── DAY 1 ── Selasa, 12 Mei 2026 -->
+    <!-- Day 1 -->
     <div class="day-accordion" id="acc-day1">
-      <button class="day-acc-btn" aria-expanded="true" aria-controls="body-day1" onclick="toggleAcc('day1')">
+      <button class="day-acc-btn" aria-expanded="true" onclick="toggleAcc('day1')">
         <div class="day-num-chip" style="background:linear-gradient(135deg,#1a6ea8,#48b8e0)">1</div>
         <div class="day-acc-info">
           <div class="day-acc-name">Selasa, 12 Mei 2026</div>
@@ -943,36 +912,17 @@
         </div>
       </button>
       <div class="day-acc-body" id="body-day1">
-        <table class="activity-table">
-          <thead>
-            <tr>
-              <th>Waktu</th>
-              <th>Agenda</th>
-              <th>Rute</th>
-              <th>Lokasi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="activity-row" data-day="1" data-start="19" data-end="21">
-              <td><span class="badge-time">19:00</span></td>
-              <td><span class="agenda-text">Kumpul</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-jakarta"><i class="bi bi-house-fill"></i> Rumah Jule</span></td>
-            </tr>
-            <tr class="activity-row" data-day="1" data-start="21" data-end="24">
-              <td><span class="badge-time">21:00</span></td>
-              <td><span class="agenda-text">Berangkat</span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-right"></i> Jakarta → Pemalang</span></td>
-              <td><span class="badge-loc loc-jakarta"><i class="bi bi-geo-fill"></i> Rumah Jule</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <table class="activity-table"><thead><tr><th>Waktu</th><th>Agenda</th><th>Rute</th><th>Lokasi</th></tr></thead>
+        <tbody>
+          <tr class="activity-row" data-day="1" data-start="19" data-end="21"><td><span class="badge-time">19:00</span></td><td><span class="agenda-text">Kumpul</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-jakarta"><i class="bi bi-house-fill"></i> Rumah Jule</span></td></tr>
+          <tr class="activity-row" data-day="1" data-start="21" data-end="24"><td><span class="badge-time">21:00</span></td><td><span class="agenda-text">Berangkat</span></td><td><span class="route-chip"><i class="bi bi-arrow-right"></i> Jakarta → Pemalang</span></td><td><span class="badge-loc loc-jakarta"><i class="bi bi-geo-fill"></i> Rumah Jule</span></td></tr>
+        </tbody></table>
       </div>
     </div>
 
-    <!-- ── DAY 2 ── Rabu, 13 Mei 2026 -->
+    <!-- Day 2 -->
     <div class="day-accordion" id="acc-day2">
-      <button class="day-acc-btn" aria-expanded="false" aria-controls="body-day2" onclick="toggleAcc('day2')">
+      <button class="day-acc-btn" aria-expanded="false" onclick="toggleAcc('day2')">
         <div class="day-num-chip" style="background:linear-gradient(135deg,#0e7490,#22d3ee)">2</div>
         <div class="day-acc-info">
           <div class="day-acc-name">Rabu, 13 Mei 2026</div>
@@ -984,78 +934,24 @@
         </div>
       </button>
       <div class="day-acc-body collapse" id="body-day2">
-        <table class="activity-table">
-          <thead>
-            <tr>
-              <th>Waktu</th>
-              <th>Agenda</th>
-              <th>Rute</th>
-              <th>Lokasi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="activity-row" data-day="2" data-start="21" data-end="28">
-              <td><span class="badge-time">21:00 – 04:00</span></td>
-              <td><span class="agenda-text">Perjalanan &amp; Sampai Pemalang</span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-right"></i> Jakarta → Pemalang</span></td>
-              <td><span class="badge-loc loc-pemalang"><i class="bi bi-house-fill"></i> Rumah Mas Apan</span></td>
-            </tr>
-            <tr class="activity-row" data-day="2" data-start="28" data-end="31">
-              <td><span class="badge-time">04:00 – 07:00</span></td>
-              <td><span class="agenda-text">Istirahat</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-pemalang"><i class="bi bi-house-fill"></i> Rumah Mas Apan</span></td>
-            </tr>
-            <tr class="activity-row" data-day="2" data-start="31" data-end="31.5">
-              <td><span class="badge-time">07:00 – 07:30</span></td>
-              <td><span class="agenda-text">Otw Pantai Pemalang <em style="color:var(--dash-muted)">(Tentative)</em></span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-right"></i> Rumah → Pantai</span></td>
-              <td><span class="badge-loc loc-pemalang"><i class="bi bi-geo-fill"></i> Pemalang</span></td>
-            </tr>
-            <tr class="activity-row" data-day="2" data-start="31.5" data-end="33.5">
-              <td><span class="badge-time">07:30 – 09:30</span></td>
-              <td><span class="agenda-text">Main ke Pantai</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-pemalang"><i class="bi bi-water"></i> Pemalang</span></td>
-            </tr>
-            <tr class="activity-row" data-day="2" data-start="33.5" data-end="34">
-              <td><span class="badge-time">09:30 – 10:00</span></td>
-              <td><span class="agenda-text">Kembali ke Rumah Mas Apan</span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-left"></i> Pantai → Rumah</span></td>
-              <td><span class="badge-loc loc-pemalang"><i class="bi bi-geo-fill"></i> Pemalang</span></td>
-            </tr>
-            <tr class="activity-row" data-day="2" data-start="34" data-end="40">
-              <td><span class="badge-time">10:00 – 16:00</span></td>
-              <td><span class="agenda-text">Istirahat / Freetime</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-pemalang"><i class="bi bi-house-fill"></i> Pemalang</span></td>
-            </tr>
-            <tr class="activity-row" data-day="2" data-start="40" data-end="46">
-              <td><span class="badge-time">16:00 – 22:00</span></td>
-              <td><span class="agenda-text">Otw Gunung Kidul</span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-right"></i> Pemalang → Gn Kidul</span></td>
-              <td><span class="badge-loc loc-travel"><i class="bi bi-car-front-fill"></i> Di Jalan</span></td>
-            </tr>
-            <tr class="activity-row" data-day="2" data-start="46" data-end="47">
-              <td><span class="badge-time">22:00 – 23:00</span></td>
-              <td><span class="agenda-text">Bukit Bintang</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-gunkid"><i class="bi bi-stars"></i> Gunung Kidul</span></td>
-            </tr>
-            <tr class="activity-row" data-day="2" data-start="47" data-end="54">
-              <td><span class="badge-time">23:00 – 06:00</span></td>
-              <td><span class="agenda-text">Check-in &amp; Istirahat</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-gunkid"><i class="bi bi-building"></i> Gunung Kidul</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <table class="activity-table"><thead><tr><th>Waktu</th><th>Agenda</th><th>Rute</th><th>Lokasi</th></tr></thead>
+        <tbody>
+          <tr class="activity-row" data-day="2" data-start="21" data-end="28"><td><span class="badge-time">21:00 – 04:00</span></td><td><span class="agenda-text">Perjalanan &amp; Sampai Pemalang</span></td><td><span class="route-chip"><i class="bi bi-arrow-right"></i> Jakarta → Pemalang</span></td><td><span class="badge-loc loc-pemalang"><i class="bi bi-house-fill"></i> Rumah Mas Apan</span></td></tr>
+          <tr class="activity-row" data-day="2" data-start="28" data-end="31"><td><span class="badge-time">04:00 – 07:00</span></td><td><span class="agenda-text">Istirahat</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-pemalang"><i class="bi bi-house-fill"></i> Rumah Mas Apan</span></td></tr>
+          <tr class="activity-row" data-day="2" data-start="31" data-end="31.5"><td><span class="badge-time">07:00 – 07:30</span></td><td><span class="agenda-text">Otw Pantai Pemalang <em style="color:var(--dash-muted)">(Tentative)</em></span></td><td><span class="route-chip"><i class="bi bi-arrow-right"></i> Rumah → Pantai</span></td><td><span class="badge-loc loc-pemalang"><i class="bi bi-geo-fill"></i> Pemalang</span></td></tr>
+          <tr class="activity-row" data-day="2" data-start="31.5" data-end="33.5"><td><span class="badge-time">07:30 – 09:30</span></td><td><span class="agenda-text">Main ke Pantai</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-pemalang"><i class="bi bi-water"></i> Pemalang</span></td></tr>
+          <tr class="activity-row" data-day="2" data-start="33.5" data-end="34"><td><span class="badge-time">09:30 – 10:00</span></td><td><span class="agenda-text">Kembali ke Rumah Mas Apan</span></td><td><span class="route-chip"><i class="bi bi-arrow-left"></i> Pantai → Rumah</span></td><td><span class="badge-loc loc-pemalang"><i class="bi bi-geo-fill"></i> Pemalang</span></td></tr>
+          <tr class="activity-row" data-day="2" data-start="34" data-end="40"><td><span class="badge-time">10:00 – 16:00</span></td><td><span class="agenda-text">Istirahat / Freetime</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-pemalang"><i class="bi bi-house-fill"></i> Pemalang</span></td></tr>
+          <tr class="activity-row" data-day="2" data-start="40" data-end="46"><td><span class="badge-time">16:00 – 22:00</span></td><td><span class="agenda-text">Otw Gunung Kidul</span></td><td><span class="route-chip"><i class="bi bi-arrow-right"></i> Pemalang → Gn Kidul</span></td><td><span class="badge-loc loc-travel"><i class="bi bi-car-front-fill"></i> Di Jalan</span></td></tr>
+          <tr class="activity-row" data-day="2" data-start="46" data-end="47"><td><span class="badge-time">22:00 – 23:00</span></td><td><span class="agenda-text">Bukit Bintang</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-gunkid"><i class="bi bi-stars"></i> Gunung Kidul</span></td></tr>
+          <tr class="activity-row" data-day="2" data-start="47" data-end="54"><td><span class="badge-time">23:00 – 06:00</span></td><td><span class="agenda-text">Check-in &amp; Istirahat</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-gunkid"><i class="bi bi-building"></i> Gunung Kidul</span></td></tr>
+        </tbody></table>
       </div>
     </div>
 
-    <!-- ── DAY 3 ── Kamis, 14 Mei 2026 -->
+    <!-- Day 3 -->
     <div class="day-accordion" id="acc-day3">
-      <button class="day-acc-btn" aria-expanded="false" aria-controls="body-day3" onclick="toggleAcc('day3')">
+      <button class="day-acc-btn" aria-expanded="false" onclick="toggleAcc('day3')">
         <div class="day-num-chip" style="background:linear-gradient(135deg,#166534,#4ade80)">3</div>
         <div class="day-acc-info">
           <div class="day-acc-name">Kamis, 14 Mei 2026</div>
@@ -1067,66 +963,22 @@
         </div>
       </button>
       <div class="day-acc-body collapse" id="body-day3">
-        <table class="activity-table">
-          <thead>
-            <tr>
-              <th>Waktu</th>
-              <th>Agenda</th>
-              <th>Rute</th>
-              <th>Lokasi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="activity-row" data-day="3" data-start="54" data-end="57">
-              <td><span class="badge-time">06:00 – 09:00</span></td>
-              <td><span class="agenda-text">Check-out &amp; Air Terjun Sri Gethuk</span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-right"></i> Penginapan → Sri Gethuk</span></td>
-              <td><span class="badge-loc loc-gunkid"><i class="bi bi-water"></i> Gn Kidul</span></td>
-            </tr>
-            <tr class="activity-row" data-day="3" data-start="57" data-end="62">
-              <td><span class="badge-time">09:00 – 14:00</span></td>
-              <td><span class="agenda-text">Pantai Drini</span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-right"></i> Sri Gethuk → Pantai Drini</span></td>
-              <td><span class="badge-loc loc-gunkid"><i class="bi bi-umbrella-fill"></i> Pantai Drini</span></td>
-            </tr>
-            <tr class="activity-row" data-day="3" data-start="62" data-end="65">
-              <td><span class="badge-time">14:00 – 17:00</span></td>
-              <td><span class="agenda-text">Otw Kota Jogja</span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-right"></i> Gn Kidul → Jogja</span></td>
-              <td><span class="badge-loc loc-travel"><i class="bi bi-car-front-fill"></i> Di Jalan</span></td>
-            </tr>
-            <tr class="activity-row" data-day="3" data-start="65" data-end="66">
-              <td><span class="badge-time">17:00 – 18:00</span></td>
-              <td><span class="agenda-text">ISHOMA</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-masjid"><i class="bi bi-moon-stars-fill"></i> Masjid</span></td>
-            </tr>
-            <tr class="activity-row" data-day="3" data-start="66" data-end="67.5">
-              <td><span class="badge-time">18:00 – 19:30</span></td>
-              <td><span class="agenda-text">Artlinx</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-jogja"><i class="bi bi-palette-fill"></i> Artlinx</span></td>
-            </tr>
-            <tr class="activity-row" data-day="3" data-start="67.5" data-end="68.5">
-              <td><span class="badge-time">19:30 – 20:30</span></td>
-              <td><span class="agenda-text">Check-in Penginapan</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-jogja"><i class="bi bi-building"></i> Jogja</span></td>
-            </tr>
-            <tr class="activity-row" data-day="3" data-start="68.5" data-end="71">
-              <td><span class="badge-time">20:30 – 23:00</span></td>
-              <td><span class="agenda-text">Malioboro</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-jogja"><i class="bi bi-shop-window"></i> Jogja</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <table class="activity-table"><thead><tr><th>Waktu</th><th>Agenda</th><th>Rute</th><th>Lokasi</th></tr></thead>
+        <tbody>
+          <tr class="activity-row" data-day="3" data-start="54" data-end="57"><td><span class="badge-time">06:00 – 09:00</span></td><td><span class="agenda-text">Check-out &amp; Air Terjun Sri Gethuk</span></td><td><span class="route-chip"><i class="bi bi-arrow-right"></i> Penginapan → Sri Gethuk</span></td><td><span class="badge-loc loc-gunkid"><i class="bi bi-water"></i> Gn Kidul</span></td></tr>
+          <tr class="activity-row" data-day="3" data-start="57" data-end="62"><td><span class="badge-time">09:00 – 14:00</span></td><td><span class="agenda-text">Pantai Drini</span></td><td><span class="route-chip"><i class="bi bi-arrow-right"></i> Sri Gethuk → Pantai Drini</span></td><td><span class="badge-loc loc-gunkid"><i class="bi bi-umbrella-fill"></i> Pantai Drini</span></td></tr>
+          <tr class="activity-row" data-day="3" data-start="62" data-end="65"><td><span class="badge-time">14:00 – 17:00</span></td><td><span class="agenda-text">Otw Kota Jogja</span></td><td><span class="route-chip"><i class="bi bi-arrow-right"></i> Gn Kidul → Jogja</span></td><td><span class="badge-loc loc-travel"><i class="bi bi-car-front-fill"></i> Di Jalan</span></td></tr>
+          <tr class="activity-row" data-day="3" data-start="65" data-end="66"><td><span class="badge-time">17:00 – 18:00</span></td><td><span class="agenda-text">ISHOMA</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-masjid"><i class="bi bi-moon-stars-fill"></i> Masjid</span></td></tr>
+          <tr class="activity-row" data-day="3" data-start="66" data-end="67.5"><td><span class="badge-time">18:00 – 19:30</span></td><td><span class="agenda-text">Artlinx</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-jogja"><i class="bi bi-palette-fill"></i> Artlinx</span></td></tr>
+          <tr class="activity-row" data-day="3" data-start="67.5" data-end="68.5"><td><span class="badge-time">19:30 – 20:30</span></td><td><span class="agenda-text">Check-in Penginapan</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-jogja"><i class="bi bi-building"></i> Jogja</span></td></tr>
+          <tr class="activity-row" data-day="3" data-start="68.5" data-end="71"><td><span class="badge-time">20:30 – 23:00</span></td><td><span class="agenda-text">Malioboro</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-jogja"><i class="bi bi-shop-window"></i> Jogja</span></td></tr>
+        </tbody></table>
       </div>
     </div>
 
-    <!-- ── DAY 4 ── Jumat, 15 Mei 2026 -->
+    <!-- Day 4 -->
     <div class="day-accordion" id="acc-day4">
-      <button class="day-acc-btn" aria-expanded="false" aria-controls="body-day4" onclick="toggleAcc('day4')">
+      <button class="day-acc-btn" aria-expanded="false" onclick="toggleAcc('day4')">
         <div class="day-num-chip" style="background:linear-gradient(135deg,#92400e,#fbbf24)">4</div>
         <div class="day-acc-info">
           <div class="day-acc-name">Jumat, 15 Mei 2026</div>
@@ -1138,54 +990,20 @@
         </div>
       </button>
       <div class="day-acc-body collapse" id="body-day4">
-        <table class="activity-table">
-          <thead>
-            <tr>
-              <th>Waktu</th>
-              <th>Agenda</th>
-              <th>Rute</th>
-              <th>Lokasi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="activity-row" data-day="4" data-start="71" data-end="79">
-              <td><span class="badge-time">23:00 – 07:00</span></td>
-              <td><span class="agenda-text">Istirahat</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-jogja"><i class="bi bi-building"></i> Penginapan Jogja</span></td>
-            </tr>
-            <tr class="activity-row" data-day="4" data-start="79" data-end="80">
-              <td><span class="badge-time">07:00 – 08:00</span></td>
-              <td><span class="agenda-text">Sarapan</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-jogja"><i class="bi bi-cup-hot-fill"></i> Jogja</span></td>
-            </tr>
-            <tr class="activity-row" data-day="4" data-start="80" data-end="85">
-              <td><span class="badge-time">08:00 – 13:00</span></td>
-              <td><span class="agenda-text">Freetime / Istirahat</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-jogja"><i class="bi bi-geo-fill"></i> Jogja</span></td>
-            </tr>
-            <tr class="activity-row" data-day="4" data-start="85" data-end="87">
-              <td><span class="badge-time">13:00 – 15:00</span></td>
-              <td><span class="agenda-text">Belanja Oleh-oleh</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-jogja"><i class="bi bi-bag-fill"></i> Jogja</span></td>
-            </tr>
-            <tr class="activity-row" data-day="4" data-start="87" data-end="93">
-              <td><span class="badge-time">15:00 – 21:00</span></td>
-              <td><span class="agenda-text">Otw Pemalang</span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-right"></i> Jogja → Pemalang</span></td>
-              <td><span class="badge-loc loc-travel"><i class="bi bi-car-front-fill"></i> Di Jalan</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <table class="activity-table"><thead><tr><th>Waktu</th><th>Agenda</th><th>Rute</th><th>Lokasi</th></tr></thead>
+        <tbody>
+          <tr class="activity-row" data-day="4" data-start="71" data-end="79"><td><span class="badge-time">23:00 – 07:00</span></td><td><span class="agenda-text">Istirahat</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-jogja"><i class="bi bi-building"></i> Penginapan Jogja</span></td></tr>
+          <tr class="activity-row" data-day="4" data-start="79" data-end="80"><td><span class="badge-time">07:00 – 08:00</span></td><td><span class="agenda-text">Sarapan</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-jogja"><i class="bi bi-cup-hot-fill"></i> Jogja</span></td></tr>
+          <tr class="activity-row" data-day="4" data-start="80" data-end="85"><td><span class="badge-time">08:00 – 13:00</span></td><td><span class="agenda-text">Freetime / Istirahat</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-jogja"><i class="bi bi-geo-fill"></i> Jogja</span></td></tr>
+          <tr class="activity-row" data-day="4" data-start="85" data-end="87"><td><span class="badge-time">13:00 – 15:00</span></td><td><span class="agenda-text">Belanja Oleh-oleh</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-jogja"><i class="bi bi-bag-fill"></i> Jogja</span></td></tr>
+          <tr class="activity-row" data-day="4" data-start="87" data-end="93"><td><span class="badge-time">15:00 – 21:00</span></td><td><span class="agenda-text">Otw Pemalang</span></td><td><span class="route-chip"><i class="bi bi-arrow-right"></i> Jogja → Pemalang</span></td><td><span class="badge-loc loc-travel"><i class="bi bi-car-front-fill"></i> Di Jalan</span></td></tr>
+        </tbody></table>
       </div>
     </div>
 
-    <!-- ── DAY 5 ── Sabtu, 16 Mei 2026 -->
+    <!-- Day 5 -->
     <div class="day-accordion" id="acc-day5">
-      <button class="day-acc-btn" aria-expanded="false" aria-controls="body-day5" onclick="toggleAcc('day5')">
+      <button class="day-acc-btn" aria-expanded="false" onclick="toggleAcc('day5')">
         <div class="day-num-chip" style="background:linear-gradient(135deg,#9d174d,#f472b6)">5</div>
         <div class="day-acc-info">
           <div class="day-acc-name">Sabtu, 16 Mei 2026</div>
@@ -1197,30 +1015,168 @@
         </div>
       </button>
       <div class="day-acc-body collapse" id="body-day5">
-        <table class="activity-table">
-          <thead>
-            <tr>
-              <th>Waktu</th>
-              <th>Agenda</th>
-              <th>Rute</th>
-              <th>Lokasi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="activity-row" data-day="5" data-start="93" data-end="102">
-              <td><span class="badge-time">21:00 – 06:00</span></td>
-              <td><span class="agenda-text">Istirahat</span></td>
-              <td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td>
-              <td><span class="badge-loc loc-pemalang"><i class="bi bi-house-fill"></i> Rumah Mas Apan</span></td>
-            </tr>
-            <tr class="activity-row" data-day="5" data-start="102" data-end="108">
-              <td><span class="badge-time">06:00 – 12:00</span></td>
-              <td><span class="agenda-text">Otw Jakarta 🎉</span></td>
-              <td><span class="route-chip"><i class="bi bi-arrow-right"></i> Pemalang → Jakarta</span></td>
-              <td><span class="badge-loc loc-jakarta"><i class="bi bi-geo-fill"></i> Jakarta</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <table class="activity-table"><thead><tr><th>Waktu</th><th>Agenda</th><th>Rute</th><th>Lokasi</th></tr></thead>
+        <tbody>
+          <tr class="activity-row" data-day="5" data-start="93" data-end="102"><td><span class="badge-time">21:00 – 06:00</span></td><td><span class="agenda-text">Istirahat</span></td><td><span class="route-chip"><i class="bi bi-dash"></i> —</span></td><td><span class="badge-loc loc-pemalang"><i class="bi bi-house-fill"></i> Rumah Mas Apan</span></td></tr>
+          <tr class="activity-row" data-day="5" data-start="102" data-end="108"><td><span class="badge-time">06:00 – 12:00</span></td><td><span class="agenda-text">Otw Jakarta 🎉</span></td><td><span class="route-chip"><i class="bi bi-arrow-right"></i> Pemalang → Jakarta</span></td><td><span class="badge-loc loc-jakarta"><i class="bi bi-geo-fill"></i> Jakarta</span></td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TRAVEL TOOLS SECTION
+============================================================ -->
+<section id="tools">
+  <div class="container position-relative">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-label"><i class="bi bi-tools"></i> Travel Tools</div>
+        <h2 class="section-title">Bantu <em>Perjalananmu</em></h2>
+        <p class="section-desc">Fitur lengkap untuk bikin trip makin smooth — dari packing, bagi biaya, sampai pantau cuaca.</p>
+      </div>
+    </div>
+
+    <!-- Tab Switcher -->
+    <div class="tool-tabs">
+      <button class="tool-tab active" onclick="switchTool('countdown')">
+        <i class="bi bi-hourglass-split"></i> Countdown
+      </button>
+      <button class="tool-tab" onclick="switchTool('packing')">
+        <i class="bi bi-bag-check-fill"></i> Packing List
+      </button>
+      <button class="tool-tab" onclick="switchTool('kas')">
+        <i class="bi bi-cash-coin"></i> Kas Bersama
+      </button>
+      <button class="tool-tab" onclick="switchTool('weather')">
+        <i class="bi bi-cloud-sun-fill"></i> Cuaca
+      </button>
+    </div>
+
+    <!-- ── COUNTDOWN PANEL ── -->
+    <div class="tool-panel active" id="panel-countdown">
+      <div class="countdown-card">
+        <div class="countdown-label" id="ctLabel">Menghitung waktu...</div>
+        <div class="countdown-grid" id="ctGrid">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="ctD">--</span>
+            <span class="countdown-unit-label">Hari</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="ctH">--</span>
+            <span class="countdown-unit-label">Jam</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="ctM">--</span>
+            <span class="countdown-unit-label">Menit</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="ctS">--</span>
+            <span class="countdown-unit-label">Detik</span>
+          </div>
+        </div>
+        <p class="countdown-msg" id="ctMsg">Memuat...</p>
+      </div>
+    </div>
+
+    <!-- ── PACKING LIST PANEL ── -->
+    <div class="tool-panel" id="panel-packing">
+      <div class="pack-card">
+        <div class="pack-header">
+          <div class="pack-header-title"><i class="bi bi-bag-check-fill me-2" style="color:var(--glow-blue)"></i>Packing Checklist</div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+            <div class="pack-progress-wrap">
+              <div class="pack-progress-bar"><div class="pack-progress-fill" id="packProgress" style="width:0%"></div></div>
+              <span class="pack-progress-text" id="packCount">0 / 0</span>
+            </div>
+            <button class="pack-reset-btn" onclick="resetPacking()"><i class="bi bi-arrow-counterclockwise me-1"></i>Reset</button>
+          </div>
+        </div>
+        <div id="packCategories"></div>
+        <div class="pack-add-row">
+          <input type="text" class="pack-add-input" id="packNewItem" placeholder="Tambah item baru..." onkeydown="if(event.key==='Enter')addPackItem()"/>
+          <select class="kas-select" id="packNewCat" style="max-width:140px;padding:0.5rem 0.7rem;">
+            <option value="Dokumen">Dokumen</option>
+            <option value="Pakaian">Pakaian</option>
+            <option value="Toiletries">Toiletries</option>
+            <option value="Elektronik">Elektronik</option>
+            <option value="Obat-obatan">Obat-obatan</option>
+            <option value="Lain-lain">Lain-lain</option>
+          </select>
+          <button class="pack-add-btn" onclick="addPackItem()"><i class="bi bi-plus-lg me-1"></i>Tambah</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── KAS BERSAMA PANEL ── -->
+    <div class="tool-panel" id="panel-kas">
+      <div class="kas-card">
+        <div class="kas-header">
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:#dce9f5;margin-bottom:0.35rem;">
+              <i class="bi bi-cash-coin me-2" style="color:var(--accent-warm)"></i>Kas Bersama
+            </div>
+            <div class="kas-members" id="kasMemberChips"></div>
+          </div>
+          <div class="kas-total-wrap">
+            <div class="kas-total-label">Total Pengeluaran</div>
+            <div class="kas-total-num" id="kasTotal">Rp 0</div>
+          </div>
+        </div>
+        <div class="kas-body">
+          <!-- Add expense form -->
+          <div class="kas-form">
+            <div class="kas-form-group">
+              <label>Nama Pengeluaran</label>
+              <input type="text" class="kas-input" id="kasDesc" placeholder="cth: Bensin, Makan, dll" />
+            </div>
+            <div class="kas-form-group">
+              <label>Jumlah (Rp)</label>
+              <input type="number" class="kas-input" id="kasAmt" placeholder="150000" min="0" />
+            </div>
+            <div class="kas-form-group">
+              <label>Dibayar oleh</label>
+              <select class="kas-select" id="kasPayer"></select>
+            </div>
+            <button class="kas-add-btn" onclick="addKasItem()"><i class="bi bi-plus-lg me-1"></i>Tambah</button>
+          </div>
+
+          <!-- Expense list -->
+          <div class="kas-list-header">
+            <span>Nama</span><span>Dibayar</span><span>Jumlah</span><span></span>
+          </div>
+          <div id="kasList"></div>
+
+          <div class="kas-divider"></div>
+
+          <!-- Summary per person -->
+          <div class="kas-summary-title"><i class="bi bi-calculator me-1"></i>Ringkasan per Orang</div>
+          <div class="kas-summary-grid" id="kasSummary"></div>
+
+          <!-- Settlement -->
+          <div class="kas-settlement" id="kasSettlement" style="display:none">
+            <div class="kas-settlement-title"><i class="bi bi-arrow-left-right me-1"></i>Transfer yang Harus Dilakukan</div>
+            <div id="kasSettleList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CUACA PANEL ── -->
+    <div class="tool-panel" id="panel-weather">
+      <div class="weather-card">
+        <div class="weather-header">
+          <div class="weather-header-title"><i class="bi bi-cloud-sun-fill me-2" style="color:var(--accent-warm)"></i>Prakiraan Cuaca Destinasi</div>
+          <button class="weather-refresh-btn" onclick="loadWeather()"><i class="bi bi-arrow-clockwise me-1"></i>Refresh</button>
+        </div>
+        <div id="weatherContent">
+          <div class="weather-loading"><div class="spinner"></div>Memuat data cuaca...</div>
+        </div>
+        <div class="weather-tip" id="weatherTip" style="display:none">
+          <strong>Tips:</strong> <span id="weatherTipText"></span>
+        </div>
       </div>
     </div>
 
@@ -1228,9 +1184,7 @@
 </section>
 
 
-<!-- ============================================================
-     GALLERY SECTION
-============================================================ -->
+<!-- GALLERY -->
 <section id="gallery">
   <div class="container position-relative">
     <div class="row mb-5">
@@ -1240,68 +1194,37 @@
         <p class="section-desc">Klik gambar untuk memperbesar dan jelajahi keindahan setiap destinasi.</p>
       </div>
     </div>
-
-    <!-- Gallery Grid -->
     <div class="gallery-grid" id="galleryGrid">
-
-      <!-- 1: Pantai Pemalang -->
       <div class="g-item" data-index="0">
-        <img src="https://images.unsplash.com/photo-1629605924917-d2de56a40951?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8am9namFrYXJ0YXxlbnwwfHwwfHx8MA%3D%3D" alt="Pantai Pemalang" loading="lazy"/>
-        <div class="g-overlay">
-          <div class="g-label">Pantai Widuri</div>
-          <div class="g-sub">Pemalang, Jawa Tengah</div>
-        </div>
+        <img src="https://images.unsplash.com/photo-1629605924917-d2de56a40951?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Pantai Pemalang" loading="lazy"/>
+        <div class="g-overlay"><div class="g-label">Pantai Widuri</div><div class="g-sub">Pemalang, Jawa Tengah</div></div>
         <div class="g-zoom"><i class="bi bi-zoom-in"></i></div>
       </div>
-
-      <!-- 2: Bukit Bintang -->
       <div class="g-item" data-index="1">
-        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFaZOV1zxebRgx6DgS5qFNe6zg4Y124DZYKknYrOyCGdRbJ0OpyJ3gMr-y-Z8L-OHK-u7zNtXtKySlccqIpc6gZFjO17NbStXkYvb7Zh7V-L9n526fR9netC_-nsqLoXEKt4UoZ=s680-w680-h510-rw" alt="Bukit Bintang Jogja" loading="lazy"/>
-        <div class="g-overlay">
-          <div class="g-label">Bukit Bintang</div>
-          <div class="g-sub">Gunung Kidul, Yogyakarta</div>
-        </div>
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFaZOV1zxebRgx6DgS5qFNe6zg4Y124DZYKknYrOyCGdRbJ0OpyJ3gMr-y-Z8L-OHK-u7zNtXtKySlccqIpc6gZFjO17NbStXkYvb7Zh7V-L9n526fR9netC_-nsqLoXEKt4UoZ=s680-w680-h510-rw" alt="Bukit Bintang" loading="lazy"/>
+        <div class="g-overlay"><div class="g-label">Bukit Bintang</div><div class="g-sub">Gunung Kidul, Yogyakarta</div></div>
         <div class="g-zoom"><i class="bi bi-zoom-in"></i></div>
       </div>
-
-      <!-- 3: Sri Gethuk -->
       <div class="g-item" data-index="2">
         <img src="https://raw.githubusercontent.com/rurunim1412/img_repo/refs/heads/main/IMG_20240925_114327.jpg" alt="Air Terjun Sri Gethuk" loading="lazy"/>
-        <div class="g-overlay">
-          <div class="g-label">Air Terjun Sri Gethuk</div>
-          <div class="g-sub">Gunung Kidul, Yogyakarta</div>
-        </div>
+        <div class="g-overlay"><div class="g-label">Air Terjun Sri Gethuk</div><div class="g-sub">Gunung Kidul, Yogyakarta</div></div>
         <div class="g-zoom"><i class="bi bi-zoom-in"></i></div>
       </div>
-
-      <!-- 4: Pantai Drini -->
       <div class="g-item" data-index="3">
-        <img src="https://images.unsplash.com/photo-1707024259577-413bc9786d2d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8" alt="Pantai Drini" loading="lazy"/>
-        <div class="g-overlay">
-          <div class="g-label">Pantai Drini</div>
-          <div class="g-sub">Gunung Kidul, Yogyakarta</div>
-        </div>
+        <img src="https://images.unsplash.com/photo-1707024259577-413bc9786d2d?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Pantai Drini" loading="lazy"/>
+        <div class="g-overlay"><div class="g-label">Pantai Drini</div><div class="g-sub">Gunung Kidul, Yogyakarta</div></div>
         <div class="g-zoom"><i class="bi bi-zoom-in"></i></div>
       </div>
-
-      <!-- 5: Malioboro -->
       <div class="g-item" data-index="4">
-        <img src="https://images.unsplash.com/photo-1687677345376-ae90d26f6374?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsaW9ib3JvJTIweW9neWFrYXJ0YXxlbnwwfHwwfHx8MA%3D%3D" alt="Malioboro" loading="lazy"/>
-        <div class="g-overlay">
-          <div class="g-label">Malioboro</div>
-          <div class="g-sub">Kota Yogyakarta</div>
-        </div>
+        <img src="https://images.unsplash.com/photo-1687677345376-ae90d26f6374?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Malioboro" loading="lazy"/>
+        <div class="g-overlay"><div class="g-label">Malioboro</div><div class="g-sub">Kota Yogyakarta</div></div>
         <div class="g-zoom"><i class="bi bi-zoom-in"></i></div>
       </div>
-
-    </div><!-- /.gallery-grid -->
+    </div>
   </div>
 </section>
 
-
-<!-- ============================================================
-     MAP SECTION
-============================================================ -->
+<!-- MAP -->
 <section id="map">
   <div class="container">
     <div class="row mb-4">
@@ -1311,7 +1234,6 @@
         <p class="section-desc">Dari Jakarta menuju pantai Pemalang, lanjut ke keajaiban alam Gunung Kidul, dan berakhir di kota budaya Yogyakarta.</p>
       </div>
     </div>
-    <!-- Pin Tags -->
     <div class="map-pin-list mb-4">
       <span class="map-pin"><i class="bi bi-geo-alt-fill"></i> Jakarta (Start)</span>
       <span class="map-pin"><i class="bi bi-geo-alt-fill"></i> Pantai Widuri, Pemalang</span>
@@ -1320,32 +1242,22 @@
       <span class="map-pin"><i class="bi bi-geo-alt-fill"></i> Pantai Drini</span>
       <span class="map-pin"><i class="bi bi-geo-alt-fill"></i> Artlinx & Malioboro, Jogja</span>
     </div>
-    <!-- Map iFrame -->
     <div class="map-frame-wrap">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d507736.3148093878!2d110.36446!3d-7.80139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1713400000000!5m2!1sen!2sid"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Rute Perjalanan Jogja Trip 2026"
-      ></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d507736.3148093878!2d110.36446!3d-7.80139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1713400000000!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Rute Perjalanan"></iframe>
     </div>
   </div>
 </section>
 
-
-<!-- ============================================================
-     LIGHTBOX MODAL
-============================================================ -->
-<div class="modal fade" id="lightboxModal" tabindex="-1" aria-label="Lightbox" aria-hidden="true">
+<!-- LIGHTBOX MODAL -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="lightboxTitle">Galeri Foto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <img id="lightboxImg" src="" alt="Gallery image"/>
+        <img id="lightboxImg" src="" alt=""/>
         <p class="lb-caption" id="lightboxCaption"></p>
         <p class="lb-counter" id="lightboxCounter"></p>
       </div>
@@ -1357,260 +1269,412 @@
   </div>
 </div>
 
-
-<!-- ============================================================
-     FOOTER
-============================================================ -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-brand"><i class="bi bi-compass me-1"></i>Jogja Trip 2026</div>
-    <p class="footer-text mt-1">
-      Made with <span class="footer-heart">❤️</span> by <a href="#">The Fellowship of HiVICT (Hidden Village Of ICT)</a> &nbsp;·&nbsp; © 2026
-    </p>
-    <p class="footer-text mt-1" style="font-size:0.72rem; opacity:0.5">
-      12 – 16 Mei 2026 &nbsp;·&nbsp; Jakarta – Pemalang – Gunung Kidul – Yogyakarta
-    </p>
+    <p class="footer-text mt-1">Made with <span class="footer-heart">❤️</span> by <a href="#">The Fellowship of HiVICT</a> &nbsp;·&nbsp; © 2026</p>
+    <p class="footer-text mt-1" style="font-size:0.72rem;opacity:0.5">12 – 16 Mei 2026 &nbsp;·&nbsp; Jakarta – Pemalang – Gunung Kidul – Yogyakarta</p>
   </div>
 </footer>
 
-
-<!-- Bootstrap 5 JS Bundle (includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
 /* ============================================================
-   JAVASCRIPT — All interactive features
+   CORE
 ============================================================ */
-
-/* 1. NAVBAR: Add 'scrolled' class on scroll
--------------------------------------------------------------- */
 const mainNav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
   mainNav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-
-/* 2. HERO PARTICLES: Generate floating bokeh dots
--------------------------------------------------------------- */
 (function createParticles() {
   const container = document.getElementById('particles');
-  const COUNT = 18;
-  for (let i = 0; i < COUNT; i++) {
+  for (let i = 0; i < 18; i++) {
     const dot = document.createElement('div');
     dot.className = 'particle';
-    const size = Math.random() * 60 + 20; // 20–80px
-    dot.style.cssText = `
-      width:  ${size}px;
-      height: ${size}px;
-      left:   ${Math.random() * 100}%;
-      animation-duration: ${Math.random() * 12 + 8}s;
-      animation-delay:    ${Math.random() * -15}s;
-      opacity: ${Math.random() * 0.15 + 0.05};
-    `;
+    const size = Math.random() * 60 + 20;
+    dot.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${Math.random()*12+8}s;animation-delay:${Math.random()*-15}s;opacity:${Math.random()*0.15+0.05};`;
     container.appendChild(dot);
   }
 })();
 
-
-/* 3. HERO PARALLAX: Subtle parallax on scroll
--------------------------------------------------------------- */
 const heroBg = document.getElementById('heroBg');
 window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  if (scrollY < window.innerHeight) {
-    heroBg.style.transform = `scale(1.05) translateY(${scrollY * 0.25}px)`;
-  }
+  if (window.scrollY < window.innerHeight)
+    heroBg.style.transform = `scale(1.05) translateY(${window.scrollY*0.25}px)`;
 }, { passive: true });
 
-
-/* 4. ACCORDION TIMELINE: Toggle open/close per day
--------------------------------------------------------------- */
 function toggleAcc(dayId) {
   const btn  = document.querySelector(`#acc-${dayId} .day-acc-btn`);
   const body = document.getElementById(`body-${dayId}`);
-  const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-  if (isOpen) {
-    body.classList.add('collapse');
-    btn.setAttribute('aria-expanded', 'false');
-  } else {
-    body.classList.remove('collapse');
-    btn.setAttribute('aria-expanded', 'true');
-  }
+  const open = btn.getAttribute('aria-expanded') === 'true';
+  open ? body.classList.add('collapse') : body.classList.remove('collapse');
+  btn.setAttribute('aria-expanded', String(!open));
 }
 
-
-/* 5. LIVE PROGRESS INDICATOR
-   Maps each activity row to a real date+time window.
-   If NOW falls within a trip day (12–16 May 2026), the
-   matching accordion opens, the row glows, and the banner
-   shows the current activity name.
--------------------------------------------------------------- */
-(function initLiveProgress() {
-  // Trip day → calendar date mapping (year, month 0-indexed, day)
-  const DAY_DATES = {
-    1: new Date(2026, 4, 12),  // 12 May 2026
-    2: new Date(2026, 4, 13),  // 13 May
-    3: new Date(2026, 4, 14),  // 14 May
-    4: new Date(2026, 4, 15),  // 15 May
-    5: new Date(2026, 4, 16),  // 16 May
-  };
-
-  // Convert data-start/data-end (hours offset from Day-1 19:00)
-  // into absolute Date objects.
-  // Anchor: Day 1 starts at 2026-05-12 19:00 local time.
+/* LIVE PROGRESS */
+(function initLive() {
   const ANCHOR = new Date(2026, 4, 12, 19, 0, 0);
-
-  function hoursToDate(offsetHours) {
-    const d = new Date(ANCHOR.getTime());
-    d.setTime(d.getTime() + offsetHours * 3600000);
-    return d;
-  }
-
+  const hoursToDate = h => new Date(ANCHOR.getTime() + h * 3600000);
   const now = new Date();
-
-  // Trip window: 12 May 19:00 → 16 May 12:00
   const tripStart = new Date(2026, 4, 12, 19, 0);
   const tripEnd   = new Date(2026, 4, 16, 12, 0);
-
-  if (now < tripStart || now > tripEnd) return; // outside trip — do nothing
-
-  // Show the banner
-  const banner = document.getElementById('liveProgressBanner');
-  banner.style.display = 'block';
-
-  // Find current activity
-  const rows = document.querySelectorAll('.activity-row');
-  let foundRow = null;
-
-  rows.forEach(row => {
-    const startOff = parseFloat(row.dataset.start);
-    const endOff   = parseFloat(row.dataset.end);
-    const rowStart = hoursToDate(startOff);
-    const rowEnd   = hoursToDate(endOff);
-
-    if (now >= rowStart && now < rowEnd) {
-      foundRow = row;
-    }
+  if (now < tripStart || now > tripEnd) return;
+  document.getElementById('liveProgressBanner').style.display = 'block';
+  let found = null;
+  document.querySelectorAll('.activity-row').forEach(row => {
+    const s = hoursToDate(parseFloat(row.dataset.start));
+    const e = hoursToDate(parseFloat(row.dataset.end));
+    if (now >= s && now < e) found = row;
   });
-
-  if (foundRow) {
-    // Add glowing class
-    foundRow.classList.add('is-live');
-    const agendaEl = foundRow.querySelector('.agenda-text');
-    if (agendaEl) agendaEl.classList.add('is-live-text');
-
-    // Add live pill next to agenda
-    const pill = document.createElement('span');
-    pill.className = 'live-pill';
-    pill.textContent = 'LIVE';
-    agendaEl && agendaEl.parentNode.appendChild(pill);
-
-    // Update banner text
-    const agendaText = agendaEl ? agendaEl.textContent.trim() : 'Aktivitas berlangsung';
-    document.getElementById('liveActivityText').textContent =
-      `Sedang berlangsung: ${agendaText}`;
-
-    // Auto-open the accordion that contains this row
-    const parentAcc = foundRow.closest('.day-accordion');
-    if (parentAcc) {
-      const dayId = parentAcc.id.replace('acc-', '');
-      const body  = document.getElementById(`body-${dayId}`);
-      const btn   = parentAcc.querySelector('.day-acc-btn');
-      body && body.classList.remove('collapse');
-      btn  && btn.setAttribute('aria-expanded', 'true');
-
-      // Smooth scroll to the row after short delay
-      setTimeout(() => {
-        foundRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 600);
-    }
+  if (found) {
+    found.classList.add('is-live');
+    const ag = found.querySelector('.agenda-text');
+    if (ag) { ag.classList.add('is-live-text'); const p = document.createElement('span'); p.className='live-pill'; p.textContent='LIVE'; ag.parentNode.appendChild(p); }
+    document.getElementById('liveActivityText').textContent = `Sedang berlangsung: ${ag ? ag.textContent.trim() : '–'}`;
+    const pa = found.closest('.day-accordion');
+    if (pa) { const id = pa.id.replace('acc-',''); document.getElementById(`body-${id}`)?.classList.remove('collapse'); pa.querySelector('.day-acc-btn')?.setAttribute('aria-expanded','true'); setTimeout(() => found.scrollIntoView({behavior:'smooth',block:'center'}), 600); }
   } else {
-    document.getElementById('liveActivityText').textContent =
-      'Trip sedang berlangsung — cek jadwal di bawah.';
+    document.getElementById('liveActivityText').textContent = 'Trip sedang berlangsung.';
   }
 })();
 
-
-/* 5. GALLERY LIGHTBOX: Click-to-open with prev/next navigation
--------------------------------------------------------------- */
+/* GALLERY LIGHTBOX */
 (function initLightbox() {
-  // Collect all gallery images data
-  const galleryItems = Array.from(document.querySelectorAll('#galleryGrid .g-item'));
-  const imagesData = galleryItems.map(item => ({
-    src:     item.querySelector('img').src,
-    label:   item.querySelector('.g-label').textContent,
-    sub:     item.querySelector('.g-sub').textContent
-  }));
-
-  let currentIndex = 0;
-  const modal      = new bootstrap.Modal(document.getElementById('lightboxModal'));
-  const lbImg      = document.getElementById('lightboxImg');
-  const lbCaption  = document.getElementById('lightboxCaption');
-  const lbCounter  = document.getElementById('lightboxCounter');
-  const lbTitle    = document.getElementById('lightboxTitle');
-
-  /** Update the modal content for a given index */
-  function showImage(index) {
-    currentIndex = (index + imagesData.length) % imagesData.length;
-    const data   = imagesData[currentIndex];
-
-    // Fade effect
+  const items = Array.from(document.querySelectorAll('#galleryGrid .g-item'));
+  const data  = items.map(i => ({ src: i.querySelector('img').src, label: i.querySelector('.g-label').textContent, sub: i.querySelector('.g-sub').textContent }));
+  let idx = 0;
+  const modal   = new bootstrap.Modal(document.getElementById('lightboxModal'));
+  const lbImg   = document.getElementById('lightboxImg');
+  const lbCap   = document.getElementById('lightboxCaption');
+  const lbCnt   = document.getElementById('lightboxCounter');
+  const lbTit   = document.getElementById('lightboxTitle');
+  function show(i) {
+    idx = (i + data.length) % data.length;
     lbImg.style.opacity = '0';
-    setTimeout(() => {
-      lbImg.src           = data.src;
-      lbImg.alt           = data.label;
-      lbCaption.textContent = `${data.label} — ${data.sub}`;
-      lbTitle.textContent   = data.label;
-      lbCounter.textContent = `${currentIndex + 1} / ${imagesData.length}`;
-      lbImg.style.opacity   = '1';
-    }, 150);
+    setTimeout(() => { lbImg.src = data[idx].src; lbImg.alt = data[idx].label; lbCap.textContent = `${data[idx].label} — ${data[idx].sub}`; lbTit.textContent = data[idx].label; lbCnt.textContent = `${idx+1} / ${data.length}`; lbImg.style.opacity='1'; }, 150);
     lbImg.style.transition = 'opacity 0.3s';
   }
-
-  // Click handlers on gallery items
-  galleryItems.forEach((item, i) => {
-    item.addEventListener('click', () => {
-      showImage(i);
-      modal.show();
-    });
-  });
-
-  // Prev / Next buttons
-  document.getElementById('lbPrev').addEventListener('click', () => showImage(currentIndex - 1));
-  document.getElementById('lbNext').addEventListener('click', () => showImage(currentIndex + 1));
-
-  // Keyboard navigation (arrow keys) while modal open
-  document.addEventListener('keydown', (e) => {
-    const modalEl = document.getElementById('lightboxModal');
-    if (!modalEl.classList.contains('show')) return;
-    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
-    if (e.key === 'ArrowLeft')  showImage(currentIndex - 1);
+  items.forEach((it,i) => it.addEventListener('click', () => { show(i); modal.show(); }));
+  document.getElementById('lbPrev').addEventListener('click', () => show(idx-1));
+  document.getElementById('lbNext').addEventListener('click', () => show(idx+1));
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightboxModal').classList.contains('show')) return;
+    if (e.key==='ArrowRight') show(idx+1);
+    if (e.key==='ArrowLeft')  show(idx-1);
   });
 })();
 
-
-/* 6. SMOOTH ACTIVE NAV: Highlight nav link on scroll
--------------------------------------------------------------- */
-(function initScrollSpy() {
-  const sections  = document.querySelectorAll('section[id]');
-  const navLinks  = document.querySelectorAll('.nav-link');
-
+/* SCROLL SPY */
+(function() {
+  const secs = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-link');
   window.addEventListener('scroll', () => {
-    let currentId = '';
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - 120) {
-        currentId = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.style.color = link.getAttribute('href') === `#${currentId}`
-        ? 'rgba(255,255,255,1)'
-        : '';
-    });
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    links.forEach(l => { l.style.color = l.getAttribute('href') === `#${cur}` ? 'rgba(255,255,255,1)' : ''; });
   }, { passive: true });
 })();
 
+/* ============================================================
+   TOOL TAB SWITCHER
+============================================================ */
+function switchTool(id) {
+  document.querySelectorAll('.tool-tab').forEach((t,i) => {
+    const panels = ['countdown','packing','kas','weather'];
+    t.classList.toggle('active', panels[i] === id);
+  });
+  document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(`panel-${id}`).classList.add('active');
+  if (id === 'weather' && !weatherLoaded) loadWeather();
+}
+
+/* ============================================================
+   COUNTDOWN
+============================================================ */
+(function initCountdown() {
+  const TRIP_START = new Date(2026, 4, 12, 19, 0, 0);
+  const TRIP_END   = new Date(2026, 4, 16, 12, 0, 0);
+  const pad = n => String(Math.floor(n)).padStart(2,'0');
+  function tick() {
+    const now  = new Date();
+    const dD   = document.getElementById('ctD');
+    const dH   = document.getElementById('ctH');
+    const dM   = document.getElementById('ctM');
+    const dS   = document.getElementById('ctS');
+    const msg  = document.getElementById('ctMsg');
+    const lbl  = document.getElementById('ctLabel');
+    if (now < TRIP_START) {
+      const diff = TRIP_START - now;
+      const days = Math.floor(diff / 86400000);
+      const hrs  = Math.floor((diff % 86400000) / 3600000);
+      const mins = Math.floor((diff % 3600000)  / 60000);
+      const secs = Math.floor((diff % 60000)    / 1000);
+      dD.textContent = pad(days); dH.textContent = pad(hrs);
+      dM.textContent = pad(mins); dS.textContent = pad(secs);
+      lbl.textContent = 'Menuju Hari Keberangkatan';
+      msg.innerHTML = 'Bersiaplah — <em>petualangan Jogja</em> sudah di depan mata! 🚀';
+    } else if (now <= TRIP_END) {
+      const diff = TRIP_END - now;
+      const days = Math.floor(diff / 86400000);
+      const hrs  = Math.floor((diff % 86400000) / 3600000);
+      const mins = Math.floor((diff % 3600000)  / 60000);
+      const secs = Math.floor((diff % 60000)    / 1000);
+      dD.textContent = pad(days); dH.textContent = pad(hrs);
+      dM.textContent = pad(mins); dS.textContent = pad(secs);
+      lbl.textContent = '🟢 TRIP SEDANG BERLANGSUNG';
+      msg.innerHTML = 'Nikmati setiap momennya! <em>Sisa waktu trip:</em>';
+    } else {
+      dD.textContent='00'; dH.textContent='00'; dM.textContent='00'; dS.textContent='00';
+      lbl.textContent = 'Trip Selesai';
+      msg.innerHTML = '<em>Kenangan indah Jogja 2026</em> selalu ada dalam ingatan. 🎉';
+    }
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ============================================================
+   PACKING LIST
+============================================================ */
+const PACK_DATA = {
+  'Dokumen':     [{name:'KTP / Identitas', checked:false},{name:'Dompet & Uang Cash', checked:false},{name:'Catatan nomor penting', checked:false}],
+  'Pakaian':     [{name:'Baju ganti (3-4 set)', checked:false},{name:'Celana / Rok', checked:false},{name:'Pakaian dalam', checked:false},{name:'Kaos kaki', checked:false},{name:'Sandal & Sepatu', checked:false},{name:'Jaket / Cardigan', checked:false},{name:'Topi pantai', checked:false}],
+  'Toiletries':  [{name:'Sikat & Pasta gigi', checked:false},{name:'Sabun mandi', checked:false},{name:'Shampo', checked:false},{name:'Sunscreen SPF50+', checked:false},{name:'Deodorant', checked:false},{name:'Handuk kecil', checked:false}],
+  'Elektronik':  [{name:'Charger HP', checked:false},{name:'Powerbank', checked:false},{name:'Earphone', checked:false},{name:'Kamera / GoPro', checked:false},{name:'Kabel data', checked:false}],
+  'Obat-obatan': [{name:'Paracetamol', checked:false},{name:'Obat masuk angin', checked:false},{name:'Antasida (Promag)', checked:false},{name:'Minyak kayu putih', checked:false},{name:'Plester luka', checked:false}],
+  'Lain-lain':   [{name:'Snack / Cemilan perjalanan', checked:false},{name:'Botol minum', checked:false},{name:'Plastik serbaguna', checked:false},{name:'Baju renang / Ganti pantai', checked:false}],
+};
+const CAT_ICONS = { 'Dokumen':'bi-file-earmark-text-fill','Pakaian':'bi-bag-fill','Toiletries':'bi-droplet-fill','Elektronik':'bi-lightning-charge-fill','Obat-obatan':'bi-heart-pulse-fill','Lain-lain':'bi-three-dots' };
+
+function renderPacking() {
+  const container = document.getElementById('packCategories');
+  container.innerHTML = '';
+  let total = 0, done = 0;
+  Object.entries(PACK_DATA).forEach(([cat, items]) => {
+    total += items.length; done += items.filter(i=>i.checked).length;
+    const catDone = items.filter(i=>i.checked).length;
+    const div = document.createElement('div');
+    div.className = 'pack-category';
+    div.innerHTML = `
+      <div class="pack-cat-header">
+        <i class="bi ${CAT_ICONS[cat]||'bi-box'} pack-cat-icon" style="color:var(--glow-blue)"></i>
+        <span class="pack-cat-name">${cat}</span>
+        <span class="pack-cat-count">${catDone}/${items.length}</span>
+      </div>
+      <div class="pack-items-grid">
+        ${items.map((item,i) => `
+          <div class="pack-item-row${item.checked?' checked':''}" onclick="togglePack('${cat}',${i})">
+            <div class="pack-checkbox${item.checked?' checked':''}"></div>
+            <span class="pack-item-label">${item.name}</span>
+          </div>`).join('')}
+      </div>`;
+    container.appendChild(div);
+  });
+  const pct = total ? Math.round(done/total*100) : 0;
+  document.getElementById('packProgress').style.width = pct + '%';
+  document.getElementById('packCount').textContent = `${done} / ${total}`;
+}
+
+function togglePack(cat, idx) {
+  PACK_DATA[cat][idx].checked = !PACK_DATA[cat][idx].checked;
+  renderPacking();
+}
+
+function addPackItem() {
+  const inp = document.getElementById('packNewItem');
+  const cat = document.getElementById('packNewCat').value;
+  const name = inp.value.trim();
+  if (!name) return;
+  if (!PACK_DATA[cat]) PACK_DATA[cat] = [];
+  PACK_DATA[cat].push({name, checked:false});
+  inp.value = '';
+  renderPacking();
+}
+
+function resetPacking() {
+  Object.values(PACK_DATA).forEach(items => items.forEach(i => i.checked = false));
+  renderPacking();
+}
+
+renderPacking();
+
+/* ============================================================
+   KAS BERSAMA
+============================================================ */
+const KAS_MEMBERS = ['Jule','Apan','Bawiq','Maweul Terbang','Bill'];
+let kasItems = [];
+
+function initKas() {
+  const chips = document.getElementById('kasMemberChips');
+  chips.innerHTML = KAS_MEMBERS.map(m => `<span class="kas-member-chip"><i class="bi bi-person-fill"></i>${m}</span>`).join('');
+  const sel = document.getElementById('kasPayer');
+  sel.innerHTML = KAS_MEMBERS.map(m => `<option value="${m}">${m}</option>`).join('');
+  renderKas();
+}
+
+function addKasItem() {
+  const desc = document.getElementById('kasDesc').value.trim();
+  const amt  = parseFloat(document.getElementById('kasAmt').value);
+  const payer = document.getElementById('kasPayer').value;
+  if (!desc || isNaN(amt) || amt <= 0) { alert('Isi nama pengeluaran dan jumlah dengan benar!'); return; }
+  kasItems.push({ id: Date.now(), desc, amt, payer });
+  document.getElementById('kasDesc').value = '';
+  document.getElementById('kasAmt').value = '';
+  renderKas();
+}
+
+function delKasItem(id) {
+  kasItems = kasItems.filter(i => i.id !== id);
+  renderKas();
+}
+
+function formatRp(n) {
+  return 'Rp ' + Math.round(n).toLocaleString('id-ID');
+}
+
+function renderKas() {
+  // List
+  const list = document.getElementById('kasList');
+  if (kasItems.length === 0) {
+    list.innerHTML = `<div style="padding:1rem 0.75rem;color:var(--dash-muted);font-size:0.85rem;">Belum ada pengeluaran. Tambahkan di atas!</div>`;
+  } else {
+    list.innerHTML = kasItems.map(i => `
+      <div class="kas-item">
+        <span class="kas-item-name">${i.desc}</span>
+        <span class="kas-item-who"><i class="bi bi-person-fill me-1"></i>${i.payer}</span>
+        <span class="kas-item-amt">${formatRp(i.amt)}</span>
+        <button class="kas-del-btn" onclick="delKasItem(${i.id})"><i class="bi bi-x-circle"></i></button>
+      </div>`).join('');
+  }
+  // Total
+  const total = kasItems.reduce((s,i) => s+i.amt, 0);
+  document.getElementById('kasTotal').textContent = formatRp(total);
+  // Per-person
+  const n = KAS_MEMBERS.length;
+  const share = total / n;
+  const paid = {};
+  KAS_MEMBERS.forEach(m => paid[m] = 0);
+  kasItems.forEach(i => paid[i.payer] = (paid[i.payer]||0) + i.amt);
+  const balance = {};
+  KAS_MEMBERS.forEach(m => balance[m] = paid[m] - share);
+  const sumGrid = document.getElementById('kasSummary');
+  sumGrid.innerHTML = KAS_MEMBERS.map(m => {
+    const b = balance[m];
+    const cls = b > 0 ? 'bal-positive' : b < 0 ? 'bal-negative' : 'bal-zero';
+    const sign = b > 0 ? '+' : '';
+    return `<div class="kas-person-card">
+      <div class="kas-person-name">${m}</div>
+      <div class="kas-person-paid">Bayar: ${formatRp(paid[m])}</div>
+      <div class="kas-person-balance ${cls}">${sign}${formatRp(b)}</div>
+    </div>`;
+  }).join('');
+  // Settlement
+  if (total === 0) { document.getElementById('kasSettlement').style.display='none'; return; }
+  document.getElementById('kasSettlement').style.display = 'block';
+  // Simple greedy settlement
+  const debtors  = KAS_MEMBERS.filter(m => balance[m] < -0.5).map(m => ({name:m, amt:-balance[m]}));
+  const creditors = KAS_MEMBERS.filter(m => balance[m] > 0.5).map(m => ({name:m, amt:balance[m]}));
+  const txns = [];
+  let di = 0, ci = 0;
+  while (di < debtors.length && ci < creditors.length) {
+    const amt = Math.min(debtors[di].amt, creditors[ci].amt);
+    txns.push({from:debtors[di].name, to:creditors[ci].name, amt});
+    debtors[di].amt  -= amt;
+    creditors[ci].amt -= amt;
+    if (debtors[di].amt  < 0.5) di++;
+    if (creditors[ci].amt < 0.5) ci++;
+  }
+  document.getElementById('kasSettleList').innerHTML = txns.length
+    ? txns.map(t => `<div class="kas-settle-row"><strong>${t.from}</strong><span class="kas-settle-arrow">→</span><strong>${t.to}</strong>: <span class="kas-settle-amt">${formatRp(t.amt)}</span></div>`).join('')
+    : '<div style="color:var(--dash-muted);font-size:0.85rem;">Semua sudah seimbang! ✓</div>';
+}
+
+initKas();
+
+/* ============================================================
+   WEATHER — Open-Meteo (free, no API key)
+============================================================ */
+let weatherLoaded = false;
+
+const CITIES = [
+  { name:'Jakarta',       lat:-6.2088,  lon:106.8456, emoji:'🏙️', day:'Hari 1', color:'var(--glow-purple)' },
+  { name:'Pemalang',      lat:-6.8942,  lon:109.3795, emoji:'🌊', day:'Hari 2–3', color:'var(--glow-blue)' },
+  { name:'Gunung Kidul',  lat:-8.0011,  lon:110.6158, emoji:'🏝️', day:'Hari 3–4', color:'var(--glow-green)' },
+  { name:'Yogyakarta',    lat:-7.7956,  lon:110.3695, emoji:'🏛️', day:'Hari 4–5', color:'var(--glow-amber)' },
+];
+
+const WMO = {
+  0:'Cerah ☀️', 1:'Mostly Clear 🌤️', 2:'Partly Cloudy ⛅', 3:'Berawan ☁️',
+  45:'Berkabut 🌫️', 48:'Berkabut Beku 🌫️',
+  51:'Gerimis 🌦️', 53:'Gerimis Sedang 🌧️', 55:'Gerimis Lebat 🌧️',
+  61:'Hujan Ringan 🌧️', 63:'Hujan Sedang 🌧️', 65:'Hujan Lebat 🌧️',
+  71:'Salju Ringan ❄️', 73:'Salju ❄️', 75:'Salju Lebat ❄️',
+  77:'Butiran Salju ❄️',
+  80:'Shower Ringan 🌦️', 81:'Shower Sedang 🌧️', 82:'Shower Lebat ⛈️',
+  85:'Shower Salju ❄️', 86:'Shower Salju Lebat ❄️',
+  95:'Badai Petir ⛈️', 96:'Badai + Hujan Es ⛈️', 99:'Badai + Hujan Es Lebat ⛈️',
+};
+
+function getWeatherDesc(code) { return WMO[code] || 'Tidak Diketahui'; }
+
+async function loadWeather() {
+  weatherLoaded = true;
+  const el = document.getElementById('weatherContent');
+  el.innerHTML = '<div class="weather-loading"><div class="spinner"></div>Memuat data cuaca real-time…</div>';
+  document.getElementById('weatherTip').style.display = 'none';
+
+  try {
+    // Fetch all cities in parallel
+    const results = await Promise.all(CITIES.map(async city => {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FJakarta&forecast_days=7`;
+      const r = await fetch(url);
+      const d = await r.json();
+      return { city, data: d };
+    }));
+
+    // Find the trip dates index in the daily array (May 12-16)
+    el.innerHTML = `<div class="weather-grid">${results.map(({city, data}) => {
+      const cur = data.current;
+      const daily = data.daily;
+      // Find today's rain
+      const todayIdx = 0;
+      const rain = daily?.precipitation_sum?.[todayIdx] ?? 0;
+      const tMax = daily?.temperature_2m_max?.[todayIdx] ?? cur.temperature_2m;
+      const tMin = daily?.temperature_2m_min?.[todayIdx] ?? cur.temperature_2m;
+      const desc = getWeatherDesc(cur.weather_code);
+      const wind = Math.round(cur.wind_speed_10m);
+      const humid = Math.round(cur.relative_humidity_2m);
+      const temp = Math.round(cur.temperature_2m);
+      return `
+        <div class="weather-city">
+          <div class="weather-city-name" style="color:${city.color}">${city.name} <span style="opacity:.5;font-size:0.65rem;letter-spacing:1px">${city.day}</span></div>
+          <span class="weather-icon">${city.emoji}</span>
+          <div class="weather-temp">${temp}°C</div>
+          <div class="weather-desc">${desc}</div>
+          <div class="weather-meta">
+            <div class="weather-meta-row"><i class="bi bi-thermometer-high"></i> Max ${Math.round(tMax)}° / Min ${Math.round(tMin)}°</div>
+            <div class="weather-meta-row"><i class="bi bi-droplet-fill"></i> Hujan: ${rain.toFixed(1)} mm</div>
+            <div class="weather-meta-row"><i class="bi bi-moisture"></i> Kelembaban: ${humid}%</div>
+            <div class="weather-meta-row"><i class="bi bi-wind"></i> Angin: ${wind} km/j</div>
+          </div>
+        </div>`;
+    }).join('')}</div>`;
+
+    // Tips based on rain
+    const anyRain = results.some(r => (r.data.daily?.precipitation_sum?.[0] ?? 0) > 2);
+    const tipEl = document.getElementById('weatherTip');
+    const tipTxt = document.getElementById('weatherTipText');
+    if (anyRain) {
+      tipTxt.textContent = 'Diperkirakan hujan di beberapa destinasi. Siapkan jas hujan, sandal anti-slip, dan plastik pelindung tas!';
+    } else {
+      tipTxt.textContent = 'Cuaca cukup bersahabat. Jangan lupa sunscreen SPF50+ dan bawa air minum yang cukup!';
+    }
+    tipEl.style.display = 'block';
+  } catch(e) {
+    el.innerHTML = `<div class="weather-error"><i class="bi bi-exclamation-triangle me-2"></i>Gagal memuat data cuaca. Periksa koneksi internet dan coba refresh.<br><small style="opacity:.6">${e.message}</small></div>`;
+  }
+}
 </script>
 </body>
 </html>
